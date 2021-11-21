@@ -1,0 +1,78 @@
+@import url(http://fonts.googleapis.com/css?family=Fira+Sans|Yanone+Kaffeesatz:700,300);
+
+.logo {
+	font: 40px/1 'Yanone Kaffeesatz', sans-serif;
+	font-weight: 300 !important;
+	text-transform: uppercase;
+	color: #ff8a00 !important;
+	display: inline-block;
+	vertical-align: top;
+	text-shadow: 0px 0px 10px rgba(235,191,16,0),
+				 0px 0px 10px rgba(235,191,16,0),
+				 1px 1px 0px #f8f7e5,
+				 1px -1px 0px #fdce25;
+	overflow: hidden;
+	padding: 15px 10px 10px 0;
+	text-decoration: none !important;		
+}
+
+.logo span {
+	zoom: 1;
+	display: inline-block;
+	z-index: 1;
+	position: relative;
+	margin-left:3px;
+}
+.logo span.big-letter { position:absolute;
+top:-2px;
+left:0px;
+	margin-left:0;
+
+color: #f8f7e5;
+	text-align: center;
+	font-weight: 700;
+	font-size: 45px;
+	text-transform: uppercase;
+	z-index: -1;
+	*display: inline;
+	-webkit-mask-image: url('../images/mask.png');
+	-moz-mask-image: url('../images/mask.png');
+	-o-mask-image: url('../images/mask.png');
+	-ms-mask-image: url('../images/mask.png');
+	mask-image: url('../images/mask.png');
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+		}
+
+.logo {
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: color 0.6s ease-in-out;
+	-o-transition: color 0.6s ease-in-out;
+	-ms-transition: color 0.6s ease-in-out;
+	transition: color 0.6s ease-in-out;
+}
+
+.logo:hover {
+	text-shadow: none;
+	color: #2b2a29 !important;
+	cursor: pointer;
+}
+.logo:hover span.big-letter {opacity: .1;}
+
+
+
+.char1, .char1, .char6, .char10, .char14, .char18 {
+	-webkit-transition: all 1.2s ease-in-out;
+	-moz-transition: all 1.2s ease-in-out;
+	-o-transition: all 1.2s ease-in-out;
+	-ms-transition: all 1.2s ease-in-out;
+	transition: all 1.2s ease-in-out;
+}
+
+
+.logo:hover .char1, .logo:hover .char10, .logo:hover .char6, .logo:hover .char14, .logo:hover .char18 {
+	text-shadow: 0px 0px 10px rgba(255,138,0,1),
+	             0px 0px 15px rgba(255,138,0,1),
+	             0px 0px 20px rgba(255,138,0,1);
+	 color: #ff8a00;
+}
+
