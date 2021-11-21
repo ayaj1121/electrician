@@ -1,709 +1,903 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	<meta charset="utf-8" />
-	<!--[if IE]>
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<![endif]-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="" />
-	<meta name="author" content="" />
-	<title>Electrical HTML Template</title>
-	<link rel="shortcut icon" href="fav.png" type="image/png" />
-	<!-- CSS preloader -->
-	<link href="css/loader.css" rel="stylesheet" />
-	<!-- Bootstrap core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" />
-	<!-- Custom styles for this template -->
-	<link href="css/electrical-template.css" rel="stylesheet" />
-	<link href="css/logo.css" rel="stylesheet" />
-	<!-- CSS modules -->
-	<link href="css/icomoon.css" rel="stylesheet" />
-	<link href="css/flexslider.css" rel="stylesheet" />
-	<link href="css/sfmenu.css" rel="stylesheet" />
-	<link href="css/glide-slider.css" rel="stylesheet" />
-	<link href="css/jquery.jscrollpane.css" rel="stylesheet" />
-	<link href="fonts/flaticon-electrical/flaticon.css" rel="stylesheet" />
-  </head>
-  <body class="responsive">
-	<div class="loader">
-	  <div class="bubblingG">
-		<span id="bubblingG_1"> </span> <span id="bubblingG_2"> </span>
-		<span id="bubblingG_3"> </span>
-	  </div>
-	</div>
-	<!-- Off Canvas Menu -->
-	<nav id="off-canvas-menu">
-	  <div id="off-canvas-menu-title">
-		MENU<span class="icon icon-cancel-3" id="off-canvas-menu-close"></span>
-	  </div>
-	  <ul class="expander-list">
-		<li>
-		  <span class="name"
-			><span class="expander">-</span>
-			<a href="electrical-team.html"> Team </a></span
-		  >
-		  <ul>
-			<li>
-			  <span class="name"><a href="#">Team Submenu #1</a></span>
-			</li>
-			<li>
-			  <span class="name"><a href="#">Team Submenu #2</a></span>
-			</li>
-			<li>
-			  <span class="name"><a href="#">Team Submenu #3</a></span>
-			</li>
-			<li>
-			  <span class="name"><a href="#">Team Submenu #4</a></span>
-			</li>
-		  </ul>
-		</li>
-		<li>
-		  <span class="name"
-			><a href="electrical-services.html" class="btn-main"
-			  >Services</a
-			></span
-		  >
-		</li>
-		<li>
-		  <span class="name"
-			><a href="electrical-rates.html" class="btn-main">Rates</a></span
-		  >
-		</li>
-		<li>
-		  <span class="name"
-			><a href="electrical-faq.html" class="btn-main">FAQ</a></span
-		  >
-		</li>
-		<li>
-		  <span class="name"
-			><a href="electrical-reviews.html" class="btn-main"
-			  >Reviews</a
-			></span
-		  >
-		</li>
-		<li>
-		  <span class="name"
-			><a href="electrical-blog-posts.html" class="btn-main"
-			  >Blog</a
-			></span
-		  >
-		</li>
-		<li>
-		  <span class="name"
-			><a href="electrical-contact.html" class="btn-main"
-			  >Contact Us</a
-			></span
-		  >
-		</li>
-	  </ul>
-	</nav>
-	<!-- //end Off Canvas Menu -->
+	<head>
+		<meta charset="utf-8" />
+		<!--[if IE]>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>Electrical HTML Template</title>
+		<link rel="shortcut icon" href="{% static 'app/images/fav.png' %}" type="image/png" />
+		<link
+			rel="shortcut icon"
+			href="{% static 'app/images/fav.png' %}"
+			type="image/png"
+		/>
+		<!-- CSS preloader -->
+		<link href="{% static 'app/css/loader.css' %}" rel="stylesheet" />
+		<!-- Bootstrap core CSS -->
+		<link
+			href="{% static 'app/css/bootstrap.min.css' %}"
+			rel="stylesheet"
+		/>
+		<!-- Custom styles for this template -->
+		<link
+			href="{% static 'app/css/electrical-template.css' %}"
+			rel="stylesheet"
+		/>
+		<link href="{% static 'app/css/logo.css' %}" rel="stylesheet" />
+		<!-- CSS modules -->
+		<link href="{% static 'app/css/icomoon.css' %}" rel="stylesheet" />
+		<link href="{% static 'app/css/flexslider.css' %}" rel="stylesheet" />
+		<link href="{% static 'app/css/sfmenu.css' %}" rel="stylesheet" />
+		<link href="{% static 'app/css/glide-slider.css' %}" rel="stylesheet" />
+		<link
+			href="{% static 'app/css/jquery.jscrollpane.css' %}"
+			rel="stylesheet"
+		/>
+		<link href="{% static 'app/css/isotope.css' %}" rel="stylesheet" />
+		<link
+			href="{% static 'app/fonts/flaticon-electrical/flaticon.css' %}"
+			rel="stylesheet"
+		/>
+	</head>
 
-	<div id="outer">
-	  <div id="outer-canvas">
-		<!-- Navbar -->
-		<header>
-		  <!-- Back to top -->
-		  <div class="back-to-top">on top</div>
-		  <!-- //end Back to top -->
-		  <section class="navbar">
-			<div class="background">
-			  <div class="container">
-				<!-- Logo -->
-				<div class="navbar-logo pull-left">
-				  <img src="images/electrical/logo.gif" alt="" />
-				  <a class="logo" href="index.html">Electrical&nbsp;Experts</a>
-				  <div class="header-img">
-					<img src="images/electrical/header-img.png" alt="" />
-				  </div>
-				</div>
-				<!-- //end Logo -->
-				<!-- Phone -->
-				<div class="navbar-contact pull-right">
-				  <a href="#" class="btn btn-default btn-labeled pull-right">
-					<span class="btn-label"
-					  ><i class="icon icon-mobile"></i></span
-					>Request a callback</a
-				  >
-				  <div class="navbar-phone pull-right">
-					24/7 Emergency Service, Call<strong> 123-456-7890</strong>
-				  </div>
-				</div>
-				<!-- //End Phone -->
-			  </div>
-			  <!-- Main menu -->
-			  <div id="navbar-main-menu-outer">
-				<div class="container">
-				  <dl class="navbar-main-menu hidden-xs">
-					<dt class="item">
-					  <a href="index.html" class="btn-main">Home</a>
-					</dt>
-					<dd></dd>
-					<dt class="item">
-					  <ul class="sf-menu">
-						<li>
-						  <a href="electrical-team.html"> Team </a>
-						  <ul>
-							<li><a href="#">Team Submenu # 1</a></li>
-							<li><a href="#">Team Submenu # 2</a></li>
-							<li><a href="#">Team Submenu # 3</a></li>
-							<li><a href="#">Team Submenu # 4</a></li>
-						  </ul>
+	<body class="responsive">
+		<div class="loader">
+			<div class="bubblingG">
+				<span id="bubblingG_1"> </span> <span id="bubblingG_2"> </span>
+				<span id="bubblingG_3"> </span>
+			</div>
+		</div>
+		<!-- Off Canvas Menu -->
+		<nav id="off-canvas-menu">
+			<div id="off-canvas-menu-title">
+				MENU<span
+					class="icon icon-cancel-3"
+					id="off-canvas-menu-close"
+				></span>
+			</div>
+			<ul class="expander-list">
+				<li>
+					<span class="name"
+						><a href="{% url 'index' %}" class="btn-main"
+							>Home</a
+						></span
+					>
+				</li>
+				<li>
+					<span class="name"
+						><a href="{% url 'services' %}" class="btn-main"
+							>Services</a
+						></span
+					>
+				</li>
+				<li>
+					<span class="name"
+						><a href="{% url 'rates' %}" class="btn-main"
+							>Rates</a
+						></span
+					>
+				</li>
+				<li>
+					<span class="name"
+						><a href="{% url 'faq' %}" class="btn-main"
+							>FAQ</a
+						></span
+					>
+				</li>
+				<li>
+					<span class="name"
+						><a href="{% url 'reviews' %}" class="btn-main"
+							>Reviews</a
+						></span
+					>
+				</li>
+				<li>
+					<span class="name"
+						><a href="{% url 'contacts' %}" class="btn-main"
+							>Contact Us</a
+						></span
+					>
+				</li>
+			</ul>
+		</nav>
+		<!-- //end Off Canvas Menu -->
+
+		<div id="outer">
+			<div id="outer-canvas">
+				<!-- Navbar -->
+				<header>
+					<!-- Back to top -->
+					<div class="back-to-top">on top</div>
+					<!-- //end Back to top -->
+					<section class="navbar">
+						<div class="background">
+							<div class="container">
+								<!-- Logo -->
+								<div class="navbar-logo pull-left">
+									<img
+										src="images/electrical/logo.gif"
+										alt=""
+									/>
+									<a class="logo" href="index.html"
+										>Electrical&nbsp;Experts</a
+									>
+									<div class="header-img">
+										<img
+											src="images/electrical/header-img.png"
+											alt=""
+										/>
+									</div>
+								</div>
+								<!-- //end Logo -->
+								<!-- Phone -->
+								<div class="navbar-contact pull-right">
+									<a
+										href="#"
+										class="
+											btn btn-default btn-labeled
+											pull-right
+										"
+									>
+										<span class="btn-label"
+											><i
+												class="icon icon-mobile"
+											></i></span
+										>Request a callback</a
+									>
+									<div class="navbar-phone pull-right">
+										24/7 Emergency Service, Call<strong>
+											123-456-7890</strong
+										>
+									</div>
+								</div>
+								<!-- //End Phone -->
+							</div>
+							<!-- Main menu -->
+							<div id="navbar-main-menu-outer">
+								<div class="container">
+									<dl class="navbar-main-menu hidden-xs">
+										<dt class="item">
+											<a
+												href="{% url 'index' %}"
+												class="btn-main"
+												>Home</a
+											>
+										</dt>
+										<dd></dd>
+										<dt class="item">
+											<a
+												href="{% url 'services' %}"
+												class="btn-main"
+												>Services</a
+											>
+										</dt>
+										<dd></dd>
+										<dt class="item">
+											<a
+												href="{% url 'rates' %}"
+												class="btn-main"
+												>Rates</a
+											>
+										</dt>
+										<dd></dd>
+										<dt class="item">
+											<a
+												href="{% url 'faq' %}"
+												class="btn-main"
+												>FAQ</a
+											>
+										</dt>
+										<dd></dd>
+										<dt class="item">
+											<a
+												href="{% url 'reviews' %}"
+												class="btn-main"
+												>Reviews</a
+											>
+										</dt>
+										<dd></dd>
+										<dt class="item">
+											<a
+												href="{% url 'contacts' %}"
+												class="btn-main"
+												>Contact Us</a
+											>
+										</dt>
+										<dd></dd>
+									</dl>
+									<!-- Search -->
+									<form
+										class="
+											navbar-search
+											form-inline
+											visible-lg
+											pull-right
+										"
+										role="form"
+									>
+										<div class="form-group">
+											<button
+												type="submit"
+												class="button"
+											>
+												<span
+													class="icon-search-2"
+												></span>
+											</button>
+											<input
+												type="text"
+												class="form-control"
+												value="Search"
+												onblur="if (this.value == '') {this.value = 'Search';}"
+												onfocus="if(this.value == 'Search') {this.value = '';}"
+											/>
+										</div>
+									</form>
+									<!-- //end Search -->
+								</div>
+							</div>
+							<!-- //end Main menu -->
+						</div>
+						<!-- Mobile menu -->
+						<div class="container visible-xs">
+							<div class="mobile-nav row">
+								<div class="nav-item item-01">
+									<a href="#" id="off-canvas-menu-toggle"
+										><span class="icon icon-list-4"></span
+									></a>
+								</div>
+								<div class="nav-item item-02">
+									<a href="#"></a>
+								</div>
+								<div class="nav-item item-03">
+									<a href="#"></a>
+								</div>
+								<div class="nav-item item-04">
+									<a href="#"
+										><span class="icon icon-search-2"></span
+									></a>
+									<div class="tab-content">
+										<!-- Search -->
+										<form
+											class="navbar-search form-inline"
+											role="form"
+										>
+											<div class="form-group">
+												<button
+													type="submit"
+													class="button"
+												>
+													<span
+														class="icon-search-2"
+													></span>
+												</button>
+												<input
+													type="text"
+													class="form-control"
+													value="Search"
+													onblur="if (this.value == '') {this.value = 'Search';}"
+													onfocus="if(this.value == 'Search') {this.value = '';}"
+												/>
+											</div>
+										</form>
+										<!-- //end Search -->
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- //end Mobile menu -->
+						<!-- Navbar switcher -->
+						<div class="navbar-switcher-container">
+							<div class="navbar-switcher">
+								<span class="i-inactive"
+									><img
+										src="images/electrical/icon-electric.png"
+										alt=""
+								/></span>
+								<span class="i-active icon-cancel-3"></span>
+							</div>
+						</div>
+						<!-- //end Navbar switcher -->
+					</section>
+
+					<!-- Navbar height -->
+					<div class="navbar-height-inner"></div>
+					<!-- Navbar height -->
+
+					<!-- Navbar height -->
+					<div class="navbar-height"></div>
+					<!-- Navbar height -->
+				</header>
+				<!-- //end Navbar -->
+
+				<!-- Social widgets -->
+				<section class="social-widgets hidden-xs">
+					<ul class="items">
+						<li class="item item-01 facebook">
+							<a href="social/facebook.html" class="tab-icon"
+								><span class="icon-facebook-3"></span
+							></a>
+							<div class="tab-content">
+								<div class="title">FACEBOOK</div>
+								<div class="loading">
+									<img
+										src="images/ajax-loader.gif"
+										alt=""
+										class="ajaxloader"
+									/>
+								</div>
+							</div>
 						</li>
-					  </ul>
-					</dt>
-					<dd></dd>
-					<dt class="item">
-					  <a href="electrical-services.html" class="btn-main"
-						>Services</a
-					  >
-					</dt>
-					<dd></dd>
-					<dt class="item">
-					  <a href="electrical-rates.html" class="btn-main active"
-						>Rates</a
-					  >
-					</dt>
-					<dd></dd>
-					<dt class="item">
-					  <a href="electrical-faq.html" class="btn-main">FAQ</a>
-					</dt>
-					<dd></dd>
-					<dt class="item">
-					  <a href="electrical-reviews.html" class="btn-main"
-						>Reviews</a
-					  >
-					</dt>
-					<dd></dd>
-					<dt class="item">
-					  <a href="electrical-blog-posts.html" class="btn-main"
-						>Blog</a
-					  >
-					</dt>
-					<dd></dd>
-					<dt class="item">
-					  <a href="electrical-contact.html" class="btn-main"
-						>Contact Us</a
-					  >
-					</dt>
-					<dd></dd>
-				  </dl>
-				  <!-- Search -->
-				  <form
-					class="navbar-search form-inline visible-lg pull-right"
-					role="form"
-				  >
-					<div class="form-group">
-					  <button type="submit" class="button">
-						<span class="icon-search-2"></span>
-					  </button>
-					  <input
-						type="text"
-						class="form-control"
-						value="Search"
-						onblur="if (this.value == '') {this.value = 'Search';}"
-						onfocus="if(this.value == 'Search') {this.value = '';}"
-					  />
+						<li class="item item-02 twitter">
+							<a href="social/twitter.html" class="tab-icon"
+								><span class="icon-twitter-3"></span
+							></a>
+							<div class="tab-content">
+								<div class="title">TWITTER FEEDS</div>
+								<div class="loading">
+									<img
+										src="images/ajax-loader.gif"
+										alt=""
+										class="ajaxloader"
+									/>
+								</div>
+							</div>
+						</li>
+						<li class="item item-03 youtube">
+							<a href="social/youtubevideo.html" class="tab-icon"
+								><span class="icon icon-youtube-3"></span
+							></a>
+							<div class="tab-content">
+								<div class="title">Video</div>
+								<div class="loading">
+									<img
+										src="images/ajax-loader.gif"
+										alt=""
+										class="ajaxloader"
+									/>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</section>
+				<!-- //end Social widgets -->
+				<!-- Breadcrumbs -->
+				<section class="container">
+					<nav class="breadcrumbs">
+						<a href="index.html">Home</a>
+						<span class="divider">&#8250;</span>Rates
+					</nav>
+				</section>
+				<!-- //end Breadcrumbs -->
+
+				<section class="content grey-container">
+					<div class="container">
+						<h2>Rates</h2>
+						<table class="table table-striped">
+							<tbody>
+								<tr>
+									<th class="col1 text-left">Job</th>
+									<th class="col2 text-left">Details</th>
+									<th class="col3">
+										Typical price<br />
+										quoted
+									</th>
+									<th class="col4">Price range</th>
+									<th class="col5">
+										Typical time<br />
+										to complete job
+									</th>
+								</tr>
+								<tr>
+									<td>Replace light fitting</td>
+									<td>
+										Remove standard rose and replace with
+										new light fitting supplied by customer.
+									</td>
+									<td class="text-center">$37.00</td>
+									<td class="text-center">$30.00-$50.00</td>
+									<td class="text-center">0.5-1 hour</td>
+								</tr>
+								<tr>
+									<td>
+										Perform an electrical <br />
+										inspection report
+									</td>
+									<td>
+										Supply and fit a new consumer unit for
+										standard three-bed semi-detached house.
+									</td>
+									<td class="text-center">$150.00</td>
+									<td class="text-center">$120.00-$180.00</td>
+									<td class="text-center">4–8 hours</td>
+								</tr>
+								<tr>
+									<td>Replace consumer unit</td>
+									<td>
+										Safety check on electrical wiring in
+										standard three-bed semi detached house.
+									</td>
+									<td class="text-center">$350.00</td>
+									<td class="text-center">$300.00-$433.00</td>
+									<td class="text-center">0.5-1 day</td>
+								</tr>
+								<tr>
+									<td>Install electric shower</td>
+									<td>
+										Supply and fit a new consumer unit for
+										standard three-bed semi-detached house.
+									</td>
+									<td class="text-center">$300.00</td>
+									<td class="text-center">$240.00-$380.00</td>
+									<td class="text-center">0.5-1 day</td>
+								</tr>
+								<tr>
+									<td>Install a light in loft</td>
+									<td>
+										Supply and fit an 8.5kw electric shower.
+									</td>
+									<td class="text-center">$95.00</td>
+									<td class="text-center">$70.00-$140.00</td>
+									<td class="text-center">2–3 hours</td>
+								</tr>
+								<tr>
+									<td>
+										Replace old strip lighting in <br />
+										kitchen with LED downlighters
+									</td>
+									<td>
+										Supply and fit light in loft with switch
+										outside loft hatch. Assuming no light
+										already exists.
+									</td>
+									<td class="text-center">$330.00</td>
+									<td class="text-center">$250.00-$400.00</td>
+									<td class="text-center">5–8 hours</td>
+								</tr>
+								<tr>
+									<td>
+										Install an outdoor power <br />
+										socket
+									</td>
+									<td>n/a</td>
+									<td class="text-center">$100.00</td>
+									<td class="text-center">$79.00-$125.00</td>
+									<td class="text-center">1-3 hours</td>
+								</tr>
+								<tr>
+									<td>
+										Install two extra double sockets <br />
+										in lounge
+									</td>
+									<td>
+										Fit a double socket on an external wall.
+									</td>
+									<td class="text-center">$120.00</td>
+									<td class="text-center">$100.00-$160.00</td>
+									<td class="text-center">2–4 hours</td>
+								</tr>
+								<tr>
+									<td>
+										Replace standard light switch <br />
+										with a dimmer switch
+									</td>
+									<td>
+										Supply and fit two double sockets
+										(white).
+									</td>
+									<td class="text-center">$100.00</td>
+									<td class="text-center">$35.00-$60.00</td>
+									<td class="text-center">0.5-1 hour</td>
+								</tr>
+								<tr>
+									<td>Fit an electric cooker</td>
+									<td>n/a</td>
+									<td class="text-center">$50.00</td>
+									<td class="text-center">$35.00-$60.00</td>
+									<td class="text-center">1 hour</td>
+								</tr>
+								<tr>
+									<td>Install an external security light</td>
+									<td>
+										Fit a single fan electric oven. Assuming
+										all power is already in place. Customer
+										supplying oven.
+									</td>
+									<td class="text-center">$45.00</td>
+									<td class="text-center">$79.00-$130.00</td>
+									<td class="text-center">1–3 hours</td>
+								</tr>
+								<tr>
+									<td>
+										Completely rewire average two-bed
+										terraced house
+									</td>
+									<td>
+										Supply and fit an external security
+										light – movement sensitive.
+									</td>
+									<td class="text-center">$100.00</td>
+									<td class="text-center">
+										$2,183.00-$3,000.00
+									</td>
+									<td class="text-center">5–8 days</td>
+								</tr>
+								<tr>
+									<td>
+										Completely rewire average three- bed
+										semi-detached house
+									</td>
+									<td>
+										Remove old wires and fittings, install
+										new wiring and fittings - 10 rooms
+										including kitchen and two bathrooms.
+									</td>
+									<td class="text-center">$2,500.00</td>
+									<td class="text-center">
+										$2,838.00-$4000.00
+									</td>
+									<td class="text-center">6–10 days</td>
+								</tr>
+								<tr>
+									<td>
+										Completely rewire average four-bed
+										detached house
+									</td>
+									<td>
+										Remove old wires and fittings, install
+										new wiring and fittings - 10 rooms
+										including kitchen and two bathrooms.
+									</td>
+									<td class="text-center">$3,200.00</td>
+									<td class="text-center">$3,400-$5,000</td>
+									<td class="text-center">10–15 days</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="divider-lg"></div>
 					</div>
-				  </form>
-				  <!-- //end Search -->
-				</div>
-			  </div>
-			  <!-- //end Main menu -->
-			</div>
-			<!-- Mobile menu -->
-			<div class="container visible-xs">
-			  <div class="mobile-nav row">
-				<div class="nav-item item-01">
-				  <a href="#" id="off-canvas-menu-toggle"
-					><span class="icon icon-list-4"></span
-				  ></a>
-				</div>
-				<div class="nav-item item-02"><a href="#"></a></div>
-				<div class="nav-item item-03"><a href="#"></a></div>
-				<div class="nav-item item-04">
-				  <a href="#"><span class="icon icon-search-2"></span></a>
-				  <div class="tab-content">
-					<!-- Search -->
-					<form class="navbar-search form-inline" role="form">
-					  <div class="form-group">
-						<button type="submit" class="button">
-						  <span class="icon-search-2"></span>
-						</button>
-						<input
-						  type="text"
-						  class="form-control"
-						  value="Search"
-						  onblur="if (this.value == '') {this.value = 'Search';}"
-						  onfocus="if(this.value == 'Search') {this.value = '';}"
-						/>
-					  </div>
-					</form>
-					<!-- //end Search -->
-				  </div>
-				</div>
-			  </div>
-			</div>
+				</section>
 
-			<!-- //end Mobile menu -->
-			<!-- Navbar switcher -->
-			<div class="navbar-switcher-container">
-			  <div class="navbar-switcher">
-				<span class="i-inactive"
-				  ><img src="images/electrical/icon-electric.png" alt=""
-				/></span>
-				<span class="i-active icon-cancel-3"></span>
-			  </div>
-			</div>
-			<!-- //end Navbar switcher -->
-		  </section>
-
-		  <!-- Navbar height -->
-		  <div class="navbar-height-inner"></div>
-		  <!-- Navbar height -->
-
-		  <!-- Navbar height -->
-		  <div class="navbar-height"></div>
-		  <!-- Navbar height -->
-		</header>
-		<!-- //end Navbar -->
-
-		<!-- Social widgets -->
-		<section class="social-widgets hidden-xs">
-		  <ul class="items">
-			<li class="item item-01 facebook">
-			  <a href="social/facebook.html" class="tab-icon"
-				><span class="icon-facebook-3"></span
-			  ></a>
-			  <div class="tab-content">
-				<div class="title">FACEBOOK</div>
-				<div class="loading">
-				  <img src="images/ajax-loader.gif" alt="" class="ajaxloader" />
-				</div>
-			  </div>
-			</li>
-			<li class="item item-02 twitter">
-			  <a href="social/twitter.html" class="tab-icon"
-				><span class="icon-twitter-3"></span
-			  ></a>
-			  <div class="tab-content">
-				<div class="title">TWITTER FEEDS</div>
-				<div class="loading">
-				  <img src="images/ajax-loader.gif" alt="" class="ajaxloader" />
-				</div>
-			  </div>
-			</li>
-			<li class="item item-03 youtube">
-			  <a href="social/youtubevideo.html" class="tab-icon"
-				><span class="icon icon-youtube-3"></span
-			  ></a>
-			  <div class="tab-content">
-				<div class="title">Video</div>
-				<div class="loading">
-				  <img src="images/ajax-loader.gif" alt="" class="ajaxloader" />
-				</div>
-			  </div>
-			</li>
-		  </ul>
-		</section>
-		<!-- //end Social widgets -->
-		<!-- Breadcrumbs -->
-		<section class="container">
-		  <nav class="breadcrumbs">
-			<a href="index.html">Home</a>
-			<span class="divider">&#8250;</span>Rates
-		  </nav>
-		</section>
-		<!-- //end Breadcrumbs -->
-
-		<section class="content grey-container">
-		  <div class="container">
-			<h2>Rates</h2>
-			<table class="table table-striped">
-			  <tbody>
-				<tr>
-				  <th class="col1 text-left">Job</th>
-				  <th class="col2 text-left">Details</th>
-				  <th class="col3">
-					Typical price<br />
-					quoted
-				  </th>
-				  <th class="col4">Price range</th>
-				  <th class="col5">
-					Typical time<br />
-					to complete job
-				  </th>
-				</tr>
-				<tr>
-				  <td>Replace light fitting</td>
-				  <td>
-					Remove standard rose and replace with new light fitting
-					supplied by customer.
-				  </td>
-				  <td class="text-center">$37.00</td>
-				  <td class="text-center">$30.00-$50.00</td>
-				  <td class="text-center">0.5-1 hour</td>
-				</tr>
-				<tr>
-				  <td>
-					Perform an electrical <br />
-					inspection report
-				  </td>
-				  <td>
-					Supply and fit a new consumer unit for standard three-bed
-					semi-detached house.
-				  </td>
-				  <td class="text-center">$150.00</td>
-				  <td class="text-center">$120.00-$180.00</td>
-				  <td class="text-center">4–8 hours</td>
-				</tr>
-				<tr>
-				  <td>Replace consumer unit</td>
-				  <td>
-					Safety check on electrical wiring in standard three-bed semi
-					detached house.
-				  </td>
-				  <td class="text-center">$350.00</td>
-				  <td class="text-center">$300.00-$433.00</td>
-				  <td class="text-center">0.5-1 day</td>
-				</tr>
-				<tr>
-				  <td>Install electric shower</td>
-				  <td>
-					Supply and fit a new consumer unit for standard three-bed
-					semi-detached house.
-				  </td>
-				  <td class="text-center">$300.00</td>
-				  <td class="text-center">$240.00-$380.00</td>
-				  <td class="text-center">0.5-1 day</td>
-				</tr>
-				<tr>
-				  <td>Install a light in loft</td>
-				  <td>Supply and fit an 8.5kw electric shower.</td>
-				  <td class="text-center">$95.00</td>
-				  <td class="text-center">$70.00-$140.00</td>
-				  <td class="text-center">2–3 hours</td>
-				</tr>
-				<tr>
-				  <td>
-					Replace old strip lighting in <br />
-					kitchen with LED downlighters
-				  </td>
-				  <td>
-					Supply and fit light in loft with switch outside loft hatch.
-					Assuming no light already exists.
-				  </td>
-				  <td class="text-center">$330.00</td>
-				  <td class="text-center">$250.00-$400.00</td>
-				  <td class="text-center">5–8 hours</td>
-				</tr>
-				<tr>
-				  <td>
-					Install an outdoor power <br />
-					socket
-				  </td>
-				  <td>n/a</td>
-				  <td class="text-center">$100.00</td>
-				  <td class="text-center">$79.00-$125.00</td>
-				  <td class="text-center">1-3 hours</td>
-				</tr>
-				<tr>
-				  <td>
-					Install two extra double sockets <br />
-					in lounge
-				  </td>
-				  <td>Fit a double socket on an external wall.</td>
-				  <td class="text-center">$120.00</td>
-				  <td class="text-center">$100.00-$160.00</td>
-				  <td class="text-center">2–4 hours</td>
-				</tr>
-				<tr>
-				  <td>
-					Replace standard light switch <br />
-					with a dimmer switch
-				  </td>
-				  <td>Supply and fit two double sockets (white).</td>
-				  <td class="text-center">$100.00</td>
-				  <td class="text-center">$35.00-$60.00</td>
-				  <td class="text-center">0.5-1 hour</td>
-				</tr>
-				<tr>
-				  <td>Fit an electric cooker</td>
-				  <td>n/a</td>
-				  <td class="text-center">$50.00</td>
-				  <td class="text-center">$35.00-$60.00</td>
-				  <td class="text-center">1 hour</td>
-				</tr>
-				<tr>
-				  <td>Install an external security light</td>
-				  <td>
-					Fit a single fan electric oven. Assuming all power is
-					already in place. Customer supplying oven.
-				  </td>
-				  <td class="text-center">$45.00</td>
-				  <td class="text-center">$79.00-$130.00</td>
-				  <td class="text-center">1–3 hours</td>
-				</tr>
-				<tr>
-				  <td>Completely rewire average two-bed terraced house</td>
-				  <td>
-					Supply and fit an external security light – movement
-					sensitive.
-				  </td>
-				  <td class="text-center">$100.00</td>
-				  <td class="text-center">$2,183.00-$3,000.00</td>
-				  <td class="text-center">5–8 days</td>
-				</tr>
-				<tr>
-				  <td>
-					Completely rewire average three- bed semi-detached house
-				  </td>
-				  <td>
-					Remove old wires and fittings, install new wiring and
-					fittings - 10 rooms including kitchen and two bathrooms.
-				  </td>
-				  <td class="text-center">$2,500.00</td>
-				  <td class="text-center">$2,838.00-$4000.00</td>
-				  <td class="text-center">6–10 days</td>
-				</tr>
-				<tr>
-				  <td>Completely rewire average four-bed detached house</td>
-				  <td>
-					Remove old wires and fittings, install new wiring and
-					fittings - 10 rooms including kitchen and two bathrooms.
-				  </td>
-				  <td class="text-center">$3,200.00</td>
-				  <td class="text-center">$3,400-$5,000</td>
-				  <td class="text-center">10–15 days</td>
-				</tr>
-			  </tbody>
-			</table>
-			<div class="divider-lg"></div>
-		  </div>
-		</section>
-
-		<!-- Social navbar -->
-		<section class="content nopad-xs">
-		  <div class="container">
-			<div class="row">
-			  <div
-				class="col-sm-6 col-md-6 col-lg-6 newsletter collapsed-block"
-			  >
-				<div class="row">
-				  <div class="col-lg-5 col-md-12 col-sm-12">
-					<h4>
-					  NEWSLETTER SIGNUP
-					  <a class="expander visible-xs" href="#TabBlock-1">+</a>
-					</h4>
-				  </div>
-				  <div
-					class="col-sm-12 col-md-12 col-lg-6 tabBlock"
-					id="TabBlock-1"
-				  >
-					<p>
-					  Enter your email and we'll send you a coupon with 10% off
-					  your next order.
-					</p>
-					<form class="form-inline" role="form">
-					  <div class="form-group input-control">
-						<button type="submit" class="button">
-						  <span class="icon-envelop"></span>
-						</button>
-						<input
-						  type="text"
-						  class="form-control"
-						  value="Your E-mail..."
-						  onblur="if (this.value == '') {this.value = 'Your E-mail...';}"
-						  onfocus="if(this.value == 'Your E-mail...') {this.value = '';}"
-						/>
-					  </div>
-					</form>
-				  </div>
-				</div>
-			  </div>
-			  <div class="col-sm-6 col-md-6 col-lg-6 collapsed-block">
-				<h4>
-				  FIND US ON<a class="expander visible-xs" href="#TabBlock-2"
-					>+</a
-				  >
-				</h4>
-				<div class="tabBlock" id="TabBlock-2">
-				  <ul class="find-us">
-					<li class="divider">
-					  <a href="#" class="animate-scale"
-						><span class="icon icon-facebook-3"></span
-					  ></a>
-					</li>
-					<li class="divider">
-					  <a href="#" class="animate-scale"
-						><span class="icon icon-twitter-3"></span
-					  ></a>
-					</li>
-					<li class="divider">
-					  <a href="#" class="animate-scale"
-						><span class="icon icon-linkedin-2"></span
-					  ></a>
-					</li>
-					<li class="divider">
-					  <a href="#" class="animate-scale"
-						><span class="icon icon-youtube-3"></span
-					  ></a>
-					</li>
-					<li class="divider">
-					  <a href="#" class="animate-scale"
-						><span class="icon icon-pinterest-2"></span
-					  ></a>
-					</li>
-					<li class="divider">
-					  <a href="#" class="animate-scale"
-						><span class="icon icon-googleplus-2"></span
-					  ></a>
-					</li>
-				  </ul>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</section>
-		<!-- //end Social navbar -->
-
-		<!-- Footer -->
-		<footer>
-		  <section class="footer-navbar">
-			<div class="container content nopad-xs">
-			  <div class="row">
-				<div
-				  class="col-sm-6 col-md-4 col-lg-4 hidden-xs animate fadeUp"
-				>
-				  <div class="copyright-text">
-					© 2015 Electrical Experts. All Rights Reserved.
-				  </div>
-				  <div class="footer-logo">
-					<img
-					  src="images/electrical/logo.png"
-					  alt=""
-					  class="img-responsive"
-					/><a href="#"
-					  ><span class="color">Electrical</span> Experts</a
-					>
-				  </div>
-				</div>
-				<div class="col-sm-6 col-md-8 col-lg-8">
-				  <div class="row">
-					<div
-					  class="
-						col-sm-6 col-md-4 col-lg-4
-						collapsed-block
-						animate
-						fadeUp
-					  "
-					>
-					  <h5>
-						Information<a
-						  class="expander visible-xs"
-						  href="#TabBlock-3"
-						  >+</a
-						>
-					  </h5>
-					  <div class="tabBlock" id="TabBlock-3">
-						<ul class="menu">
-						  <li><a href="electrical-team.html">About Us</a></li>
-						  <li><a href="#">Privacy Notice</a></li>
-						  <li><a href="#">Conditions of Use</a></li>
-						</ul>
-					  </div>
-					</div>
-					<div class="clearfix visible-sm"></div>
-					<div
-					  class="
-						col-sm-6 col-md-4 col-lg-4
-						collapsed-block
-						animate
-						fadeUp
-					  "
-					>
-					  <h5>
-						Customer service<a
-						  class="expander visible-xs"
-						  href="#TabBlock-4"
-						  >+</a
-						>
-					  </h5>
-					  <div class="tabBlock" id="TabBlock-4">
-						<ul class="menu">
-						  <li><a href="#">Online support</a></li>
-						  <li><a href="#">Help & FAQs</a></li>
-						  <li><a href="#">Call Center</a></li>
-						</ul>
-					  </div>
-					</div>
-					<div
-					  class="
-						col-sm-6 col-md-4 col-lg-4
-						collapsed-block
-						animate
-						fadeUp
-					  "
-					>
-					  <h5>
-						CUSTOM HTML BLOCK<a
-						  class="expander visible-xs"
-						  href="#TabBlock-6"
-						  >+</a
-						>
-					  </h5>
-					  <div class="tabBlock" id="TabBlock-6">
-						<ul class="menu">
-						  <li>
-							<span class="icon icon-house"></span> 7563 St.
-							Vincent Place, Glasgow
-						  </li>
-						  <li>
-							<span class="icon icon-phone-4"></span> 321321321,
-							321321321
-						  </li>
-						  <li>
-							<span class="icon icon-envelop"></span>
-							<a href="mailto:info@mydomain.com"
-							  >info@mydomain.com</a
+				<!-- Social navbar -->
+				<section class="content nopad-xs">
+					<div class="container">
+						<div class="row">
+							<div
+								class="
+									col-sm-6 col-md-6 col-lg-6
+									newsletter
+									collapsed-block
+								"
 							>
-						  </li>
-						  <li>
-							<span class="icon icon-skype-2"></span>
-							<a href="#">shop.test</a>
-						  </li>
-						</ul>
-					  </div>
+								<div class="row">
+									<div class="col-lg-5 col-md-12 col-sm-12">
+										<h4>
+											NEWSLETTER SIGNUP
+											<a
+												class="expander visible-xs"
+												href="#TabBlock-1"
+												>+</a
+											>
+										</h4>
+									</div>
+									<div
+										class="
+											col-sm-12 col-md-12 col-lg-6
+											tabBlock
+										"
+										id="TabBlock-1"
+									>
+										<p>
+											Enter your email and we'll send you
+											a coupon with 10% off your next
+											order.
+										</p>
+										<form class="form-inline" role="form">
+											<div
+												class="form-group input-control"
+											>
+												<button
+													type="submit"
+													class="button"
+												>
+													<span
+														class="icon-envelop"
+													></span>
+												</button>
+												<input
+													type="text"
+													class="form-control"
+													value="Your E-mail..."
+													onblur="if (this.value == '') {this.value = 'Your E-mail...';}"
+													onfocus="if(this.value == 'Your E-mail...') {this.value = '';}"
+												/>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div
+								class="
+									col-sm-6 col-md-6 col-lg-6
+									collapsed-block
+								"
+							>
+								<h4>
+									FIND US ON<a
+										class="expander visible-xs"
+										href="#TabBlock-2"
+										>+</a
+									>
+								</h4>
+								<div class="tabBlock" id="TabBlock-2">
+									<ul class="find-us">
+										<li class="divider">
+											<a href="#" class="animate-scale"
+												><span
+													class="icon icon-facebook-3"
+												></span
+											></a>
+										</li>
+										<li class="divider">
+											<a href="#" class="animate-scale"
+												><span
+													class="icon icon-twitter-3"
+												></span
+											></a>
+										</li>
+										<li class="divider">
+											<a href="#" class="animate-scale"
+												><span
+													class="icon icon-linkedin-2"
+												></span
+											></a>
+										</li>
+										<li class="divider">
+											<a href="#" class="animate-scale"
+												><span
+													class="icon icon-youtube-3"
+												></span
+											></a>
+										</li>
+										<li class="divider">
+											<a href="#" class="animate-scale"
+												><span
+													class="
+														icon icon-pinterest-2
+													"
+												></span
+											></a>
+										</li>
+										<li class="divider">
+											<a href="#" class="animate-scale"
+												><span
+													class="
+														icon icon-googleplus-2
+													"
+												></span
+											></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
-				  </div>
-				</div>
-			  </div>
-			</div>
-		  </section>
-		</footer>
-		<div id="outer-overlay"></div>
-		<!-- //end Footer -->
-	  </div>
-	</div>
+				</section>
+				<!-- //end Social navbar -->
 
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	  <script src="js/html5shiv.js"></script>
-	  <script src="js/respond.min.js"></script>
-	<![endif]-->
-	<script src="js/jquery-1.10.2.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.ui.touch-punch.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.flexslider.js"></script>
-	<script src="js/jquery.parallax.js"></script>
-	<script src="js/jquery.inview.js"></script>
-	<script src="js/superfish.js"></script>
-	<script src="js/supersubs.js"></script>
-	<script src="js/jquery.glide.js"></script>
-	<script src="js/jquery.lettering-0.6.min.js"></script>
-	<script src="js/jquery.jscrollpane.min.js"></script>
-	<script src="js/electrical.js"></script>
-  </body>
+				<!-- Footer -->
+				<footer>
+					<section class="footer-navbar">
+						<div class="container content nopad-xs">
+							<div class="row">
+								<div
+									class="
+										col-sm-6 col-md-4 col-lg-4
+										hidden-xs
+										animate
+										fadeUp
+									"
+								>
+									<div class="copyright-text">
+										© 2015 Electrical Experts. All Rights
+										Reserved.
+									</div>
+									<div class="footer-logo">
+										<img
+											src="images/electrical/logo.png"
+											alt=""
+											class="img-responsive"
+										/><a href="#"
+											><span class="color"
+												>Electrical</span
+											>
+											Experts</a
+										>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-8 col-lg-8">
+									<div class="row">
+										<div
+											class="
+												col-sm-6 col-md-4 col-lg-4
+												collapsed-block
+												animate
+												fadeUp
+											"
+										>
+											<h5>
+												Information<a
+													class="expander visible-xs"
+													href="#TabBlock-3"
+													>+</a
+												>
+											</h5>
+											<div
+												class="tabBlock"
+												id="TabBlock-3"
+											>
+												<ul class="menu">
+													<li>
+														<a
+															href="electrical-team.html"
+															>About Us</a
+														>
+													</li>
+													<li>
+														<a href="#"
+															>Privacy Notice</a
+														>
+													</li>
+													<li>
+														<a href="#"
+															>Conditions of
+															Use</a
+														>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="clearfix visible-sm"></div>
+										<div
+											class="
+												col-sm-6 col-md-4 col-lg-4
+												collapsed-block
+												animate
+												fadeUp
+											"
+										>
+											<h5>
+												Customer service<a
+													class="expander visible-xs"
+													href="#TabBlock-4"
+													>+</a
+												>
+											</h5>
+											<div
+												class="tabBlock"
+												id="TabBlock-4"
+											>
+												<ul class="menu">
+													<li>
+														<a href="#"
+															>Online support</a
+														>
+													</li>
+													<li>
+														<a href="#"
+															>Help & FAQs</a
+														>
+													</li>
+													<li>
+														<a href="#"
+															>Call Center</a
+														>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div
+											class="
+												col-sm-6 col-md-4 col-lg-4
+												collapsed-block
+												animate
+												fadeUp
+											"
+										>
+											<h5>
+												CUSTOM HTML BLOCK<a
+													class="expander visible-xs"
+													href="#TabBlock-6"
+													>+</a
+												>
+											</h5>
+											<div
+												class="tabBlock"
+												id="TabBlock-6"
+											>
+												<ul class="menu">
+													<li>
+														<span
+															class="
+																icon icon-house
+															"
+														></span>
+														7563 St. Vincent Place,
+														Glasgow
+													</li>
+													<li>
+														<span
+															class="
+																icon
+																icon-phone-4
+															"
+														></span>
+														321321321, 321321321
+													</li>
+													<li>
+														<span
+															class="
+																icon
+																icon-envelop
+															"
+														></span>
+														<a
+															href="mailto:info@mydomain.com"
+															>info@mydomain.com</a
+														>
+													</li>
+													<li>
+														<span
+															class="
+																icon
+																icon-skype-2
+															"
+														></span>
+														<a href="#"
+															>shop.test</a
+														>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</footer>
+				<div id="outer-overlay"></div>
+				<!-- //end Footer -->
+			</div>
+		</div>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+		<script
+			src="https://code.jquery.com/jquery-1.12.4.min.js"
+			integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+			crossorigin="anonymous"
+		></script>
+		<script src="{% static 'app/js/jquery.easing.1.3.js' %}"></script>
+		<script src="{% static 'app/js/jquery.ui.touch-punch.min.js' %}"></script>
+		<script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'app/js/jquery.flexslider.js' %}"></script>
+		<script src="{% static 'app/js/jquery.parallax.js' %}"></script>
+		<script src="{% static 'app/js/jquery.inview.js' %}"></script>
+		<script src="{% static 'app/js/superfish.js' %}"></script>
+		<script src="{% static 'app/js/supersubs.js' %}"></script>
+		<script src="{% static 'app/js/jquery.glide.js' %}"></script>
+		<script src="{% static 'app/js/jquery.lettering-0.6.min.js' %}"></script>
+		<script src="{% static 'app/js/jquery.jscrollpane.min.js' %}"></script>
+		<script src="{% static 'app/js/electrical.js' %}"></script>
+	</body>
 </html>

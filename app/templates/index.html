@@ -17,7 +17,7 @@
 		<title>Electrical HTML Template</title>
 		<link
 			rel="shortcut icon"
-			href="{% static 'app/fav.png' %}"
+			href="{% static 'app/images/fav.png' %}"
 			type="image/png"
 		/>
 		<!-- CSS preloader -->
@@ -67,70 +67,42 @@
 			<ul class="expander-list">
 				<li>
 					<span class="name"
-						><span class="expander">-</span>
-						<a href="electrical-team.html"> Team </a></span
+						><a href="{% url 'index' %}" class="btn-main"
+							>Home</a
+						></span
 					>
-					<ul>
-						<li>
-							<span class="name"
-								><a href="#">Team Submenu #1</a></span
-							>
-						</li>
-						<li>
-							<span class="name"
-								><a href="#">Team Submenu #2</a></span
-							>
-						</li>
-						<li>
-							<span class="name"
-								><a href="#">Team Submenu #3</a></span
-							>
-						</li>
-						<li>
-							<span class="name"
-								><a href="#">Team Submenu #4</a></span
-							>
-						</li>
-					</ul>
 				</li>
 				<li>
 					<span class="name"
-						><a href="electrical-services.html" class="btn-main"
+						><a href="{% url 'services' %}" class="btn-main"
 							>Services</a
 						></span
 					>
 				</li>
 				<li>
 					<span class="name"
-						><a href="electrical-rates.html" class="btn-main"
+						><a href="{% url 'rates' %}" class="btn-main"
 							>Rates</a
 						></span
 					>
 				</li>
 				<li>
 					<span class="name"
-						><a href="electrical-faq.html" class="btn-main"
+						><a href="{% url 'faq' %}" class="btn-main"
 							>FAQ</a
 						></span
 					>
 				</li>
 				<li>
 					<span class="name"
-						><a href="electrical-reviews.html" class="btn-main"
+						><a href="{% url 'reviews' %}" class="btn-main"
 							>Reviews</a
 						></span
 					>
 				</li>
 				<li>
 					<span class="name"
-						><a href="electrical-blog-posts.html" class="btn-main"
-							>Blog</a
-						></span
-					>
-				</li>
-				<li>
-					<span class="name"
-						><a href="electrical-contact.html" class="btn-main"
+						><a href="{% url 'contacts' %}" class="btn-main"
 							>Contact Us</a
 						></span
 					>
@@ -195,53 +167,15 @@
 									<dl class="navbar-main-menu hidden-xs">
 										<dt class="item">
 											<a
-												href="index.html"
+												href="{% url 'index' %}"
 												class="btn-main"
 												>Home</a
 											>
 										</dt>
 										<dd></dd>
 										<dt class="item">
-											<ul class="sf-menu">
-												<li>
-													<a
-														href="electrical-team.html"
-													>
-														Team
-													</a>
-													<ul>
-														<li>
-															<a href="#"
-																>Team Submenu #
-																1</a
-															>
-														</li>
-														<li>
-															<a href="#"
-																>Team Submenu #
-																2</a
-															>
-														</li>
-														<li>
-															<a href="#"
-																>Team Submenu #
-																3</a
-															>
-														</li>
-														<li>
-															<a href="#"
-																>Team Submenu #
-																4</a
-															>
-														</li>
-													</ul>
-												</li>
-											</ul>
-										</dt>
-										<dd></dd>
-										<dt class="item">
 											<a
-												href="electrical-services.html"
+												href="{% url 'services' %}"
 												class="btn-main"
 												>Services</a
 											>
@@ -249,7 +183,7 @@
 										<dd></dd>
 										<dt class="item">
 											<a
-												href="electrical-rates.html"
+												href="{% url 'rates' %}"
 												class="btn-main"
 												>Rates</a
 											>
@@ -257,7 +191,7 @@
 										<dd></dd>
 										<dt class="item">
 											<a
-												href="electrical-faq.html"
+												href="{% url 'faq' %}"
 												class="btn-main"
 												>FAQ</a
 											>
@@ -265,7 +199,7 @@
 										<dd></dd>
 										<dt class="item">
 											<a
-												href="electrical-reviews.html"
+												href="{% url 'reviews' %}"
 												class="btn-main"
 												>Reviews</a
 											>
@@ -273,15 +207,7 @@
 										<dd></dd>
 										<dt class="item">
 											<a
-												href="electrical-blog-posts.html"
-												class="btn-main"
-												>Blog</a
-											>
-										</dt>
-										<dd></dd>
-										<dt class="item">
-											<a
-												href="electrical-contact.html"
+												href="{% url 'contacts' %}"
 												class="btn-main"
 												>Contact Us</a
 											>

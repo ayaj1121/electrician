@@ -1,355 +1,455 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
-<!--[if IE]>
+	<meta charset="utf-8">
+	<!--[if IE]>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <![endif]-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>Electrical HTML Template</title>
-<link rel="shortcut icon" href="fav.png" type="image/png">
-<!-- CSS preloader -->
-<link href="css/loader.css" rel="stylesheet">
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href="css/electrical-template.css" rel="stylesheet">
-<link href="css/logo.css" rel="stylesheet">
-<!-- CSS modules -->
-<link href="css/icomoon.css" rel="stylesheet">
-<link href="css/flexslider.css" rel="stylesheet">
-<link href="css/sfmenu.css" rel="stylesheet">
-<link href="css/glide-slider.css" rel="stylesheet">
-<link href="css/jquery.jscrollpane.css" rel="stylesheet">
-<link href="fonts/flaticon-electrical/flaticon.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Electrical HTML Template</title>
+	<link rel="shortcut icon" href="{% static 'app/images/fav.png' %}" type="image/png" />
+	<!-- CSS preloader -->
+	<link href="{% static 'app/css/loader.css' %}" rel="stylesheet" />
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'app/css/bootstrap.min.css' %}" rel="stylesheet" />
+	<!-- Custom styles for this template -->
+	<link href="{% static 'app/css/electrical-template.css' %}" rel="stylesheet" />
+	<link href="{% static 'app/css/logo.css' %}" rel="stylesheet" />
+	<!-- CSS modules -->
+	<link href="{% static 'app/css/icomoon.css' %}" rel="stylesheet" />
+	<link href="{% static 'app/css/flexslider.css' %}" rel="stylesheet" />
+	<link href="{% static 'app/css/sfmenu.css' %}" rel="stylesheet" />
+	<link href="{% static 'app/css/glide-slider.css' %}" rel="stylesheet" />
+	<link href="{% static 'app/css/jquery.jscrollpane.css' %}" rel="stylesheet" />
+	<link href="{% static 'app/css/isotope.css' %}" rel="stylesheet" />
+	<link href="{% static 'app/fonts/flaticon-electrical/flaticon.css' %}" rel="stylesheet" />
 </head>
+
 <body class="responsive">
-<div class="loader">
-  <div class="bubblingG"> <span id="bubblingG_1"> </span> <span id="bubblingG_2"> </span> <span id="bubblingG_3"> </span> </div>
-</div>
-<!-- Off Canvas Menu -->
-<nav id="off-canvas-menu" >
-  <div id="off-canvas-menu-title">MENU<span class="icon icon-cancel-3" id="off-canvas-menu-close"></span></div>
-  <ul class="expander-list">
-    <li> <span class="name"><span class="expander">-</span> <a href="electrical-team.html"> Team </a></span>
-      <ul>
-        <li><span class="name"><a href="#">Team Submenu #1</a></span> </li>
-        <li><span class="name"><a href="#">Team Submenu #2</a></span> </li>
-        <li><span class="name"><a href="#">Team Submenu #3</a></span> </li>
-        <li><span class="name"><a href="#">Team Submenu #4</a></span> </li>
-      </ul>
-    </li>
-    <li><span class="name"><a href="electrical-services.html" class="btn-main">Services</a></span></li>
-    <li><span class="name"><a href="electrical-rates.html" class="btn-main">Rates</a></span></li>
-    <li><span class="name"><a href="electrical-faq.html" class="btn-main">FAQ</a></span></li>
-    <li><span class="name"><a href="electrical-reviews.html" class="btn-main">Reviews</a></span></li>
-    <li><span class="name"><a href="electrical-blog-posts.html" class="btn-main">Blog</a></span></li>
-    <li><span class="name"><a href="electrical-contact.html" class="btn-main">Contact Us</a></span></li>
-  </ul>
-</nav>
-<!-- //end Off Canvas Menu -->
+	<div class="loader">
+		<div class="bubblingG"> <span id="bubblingG_1"> </span> <span id="bubblingG_2"> </span> <span id="bubblingG_3">
+			</span> </div>
+	</div>
+	<!-- Off Canvas Menu -->
+	<nav id="off-canvas-menu">
+		<div id="off-canvas-menu-title">
+			MENU<span class="icon icon-cancel-3" id="off-canvas-menu-close"></span>
+		</div>
+		<ul class="expander-list">
+			<li>
+				<span class="name"><a href="{% url 'index' %}" class="btn-main">Home</a></span>
+			</li>
+			<li>
+				<span class="name"><a href="{% url 'services' %}" class="btn-main">Services</a></span>
+			</li>
+			<li>
+				<span class="name"><a href="{% url 'rates' %}" class="btn-main">Rates</a></span>
+			</li>
+			<li>
+				<span class="name"><a href="{% url 'faq' %}" class="btn-main">FAQ</a></span>
+			</li>
+			<li>
+				<span class="name"><a href="{% url 'reviews' %}" class="btn-main">Reviews</a></span>
+			</li>
+			<li>
+				<span class="name"><a href="{% url 'contacts' %}" class="btn-main">Contact Us</a></span>
+			</li>
+		</ul>
+	</nav>
+	<!-- //end Off Canvas Menu -->
 
-<div id="outer">
-  <div id="outer-canvas"> <!-- Navbar -->    <header> 
-      <!-- Back to top -->
-      <div class="back-to-top">on top</div>
-      <!-- //end Back to top -->
-      <section class="navbar">
-        <div class="background">
-          <div class="container"> 
-            <!-- Logo -->
-            <div class="navbar-logo pull-left"> <img src="images/electrical/logo.gif" alt=""/> <a class="logo" href="index.html">Electrical&nbsp;Experts</a>
-              <div class="header-img"><img src="images/electrical/header-img.png" alt=""/></div>
-            </div>
-            <!-- //end Logo --> 
-            <!-- Phone -->
-            <div class="navbar-contact pull-right">
-            <a href="#" class="btn btn-default btn-labeled pull-right"> <span class="btn-label"><i class="icon icon-mobile"></i></span>Request a callback</a>
-            <div class="navbar-phone pull-right">24/7 Emergency Service, Call<strong> 123-456-7890</strong></div>
-            </div>
-            <!-- //End Phone --> 
-          </div>
-          <!-- Main menu -->
-          <div id="navbar-main-menu-outer">
-            <div class="container">              
-            <dl class="navbar-main-menu hidden-xs">
-                <dt class="item"> <a href="index.html" class="btn-main">Home</a> </dt>
-                <dd></dd>
-                <dt class="item">
-                  <ul class="sf-menu">
-                    <li> <a href="electrical-team.html"> Team </a>
-                      <ul>
-                        <li><a href="#">Team Submenu # 1</a></li>
-                        <li><a href="#">Team Submenu # 2</a></li>
-                        <li><a href="#">Team Submenu # 3</a></li>
-                        <li><a href="#">Team Submenu # 4</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </dt>
-                <dd></dd>
-                <dt class="item"> <a href="electrical-services.html" class="btn-main">Services</a> </dt>
-                <dd></dd>
-                <dt class="item"> <a href="electrical-rates.html" class="btn-main">Rates</a> </dt>
-                <dd></dd>
-                <dt class="item"> <a href="electrical-faq.html" class="btn-main active">FAQ</a> </dt>
-                <dd></dd>
-                <dt class="item"> <a href="electrical-reviews.html" class="btn-main">Reviews</a> </dt>
-                <dd></dd>
-                <dt class="item"> <a href="electrical-blog-posts.html" class="btn-main">Blog</a> </dt>
-                <dd></dd>
-                <dt class="item"> <a href="electrical-contact.html" class="btn-main">Contact Us</a> </dt>
-                <dd></dd>
-              </dl>
-              <!-- Search -->
-              <form class="navbar-search form-inline visible-lg pull-right" role="form">
-                <div class="form-group">
-                  <button type="submit" class="button"><span class="icon-search-2"></span></button>
-                  <input type="text" class="form-control" value="Search" onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if(this.value == 'Search') {this.value = '';}">
-                </div>
-              </form>
-              <!-- //end Search --> </div>
-          </div>
-          <!-- //end Main menu --> 
-        </div>
-        <!-- Mobile menu -->
-        <div class="container visible-xs">
-          <div class="mobile-nav row">
-            <div class="nav-item item-01"><a href="#" id="off-canvas-menu-toggle"><span class="icon icon-list-4"></span></a></div>
-            <div class="nav-item item-02"><a href="#"></a></div>
-            <div class="nav-item item-03"><a href="#"></a></div>
-            <div class="nav-item item-04"><a href="#"><span class="icon icon-search-2"></span></a>
-              <div class="tab-content"> <!-- Search -->
-                <form class="navbar-search form-inline" role="form">
-                  <div class="form-group">
-                    <button type="submit" class="button"><span class="icon-search-2"></span></button>
-                    <input type="text" class="form-control" value="Search" onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if(this.value == 'Search') {this.value = '';}">
-                  </div>
-                </form>
-                <!-- //end Search --> 
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- //end Mobile menu --> 
-        <!-- Navbar switcher -->
-        <div class="navbar-switcher-container">
-          <div class="navbar-switcher"> <span class="i-inactive"><img src="images/electrical/icon-electric.png" alt=""></span> <span class="i-active icon-cancel-3"></span> </div>
-        </div>
-        <!-- //end Navbar switcher --> 
-        
-      </section>
-      
-      <!-- Navbar height -->
-      <div class="navbar-height-inner"></div>
-      <!-- Navbar height --> 
-      
-      <!-- Navbar height -->
-      <div class="navbar-height"></div>
-      <!-- Navbar height --> 
-      
-    </header>
-    <!-- //end Navbar --> 
-    
-    <!-- Social widgets -->
-    <section class="social-widgets hidden-xs">
-      <ul class="items">
-        <li class="item item-01 facebook"> <a href="social/facebook.html" class="tab-icon"><span class="icon-facebook-3"></span></a>
-          <div class="tab-content">
-            <div class="title">FACEBOOK</div>
-            <div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
-          </div>
-        </li>
-        <li class="item item-02 twitter"> <a href="social/twitter.html" class="tab-icon"><span class="icon-twitter-3"></span></a>
-          <div class="tab-content">
-            <div class="title">TWITTER FEEDS</div>
-            <div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
-          </div>
-        </li>
-        <li class="item item-03 youtube"> <a href="social/youtubevideo.html" class="tab-icon"><span class="icon icon-youtube-3"></span></a>
-          <div class="tab-content">
-            <div class="title">Video</div>
-            <div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <!-- //end Social widgets --> 
-    <!-- Breadcrumbs -->
-    <section class="container">
-      <nav class="breadcrumbs"> <a href="index.html">Home</a> <span class="divider">&#8250;</span>Frequently Asked Questions</nav>
-    </section>
-    <!-- //end Breadcrumbs -->
-    
-    <section class="content grey-container">
-      <div class="container">
-        <h3>Frequently Asked Questions </h3>
-        <p class="font-lg">Here are some questions everyone should ask their electrician before starting work: </p>
-        <div class="panel-group accordion-faq" id="faq-accordion">
-          <div class="panel">
-            <div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion" href="#question1"> <span class="arrow-down">+</span> <span class="arrow-up">&#8211;</span> Are you licensed in this city?</a> </div>
-            <div id="question1" class="panel-collapse collapse in">
-              <div class="panel-body"> Not all states, counties or towns regulate or require licenses for electricians, but it's prudent to check first with your local building department. Also ask if electrical work in your city much adhere to standards established by the National Electrical Code.</div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion" href="#question2" class="collapsed"> <span class="arrow-down">+</span> <span class="arrow-up">&#8211;</span> Will I have to apply for a permit?</a> </div>
-            <div id="question2" class="panel-collapse collapse">
-              <div class="panel-body"> If a permit is required, the electrician often will make the application for the homeowner. Some municipalities allow homeowners to do minor electrical repairs and installations if they first secure a permit and have the work inspected when complete. </div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion" href="#question3" class="collapsed"> <span class="arrow-down">+</span> <span class="arrow-up">&#8211;</span> Are there any hidden costs for the work?</a> </div>
-            <div id="question3" class="panel-collapse collapse">
-              <div class="panel-body"> The electrician should do a thorough preliminary inspection and provide you with a firm, accurate estimate of the work involved, along with the cost of fixtures or wiring that will be installed. If additional work is necessary, it can be negotiated and billed separately. </div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion" href="#question4" class="collapsed"> <span class="arrow-down">+</span> <span class="arrow-up">&#8211;</span> If my service needs upgrading, will the entire house have to be rewired?</a> </div>
-            <div id="question4" class="panel-collapse collapse">
-              <div class="panel-body">Unless you live in a very old home with antiquated wiring, you probably won't have to replace your existing electrical lines. However, if you require more electrical capacity in certain rooms, new wiring runs and additional outlets are likely to be needed. </div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion" href="#question5" class="collapsed"> <span class="arrow-down">+</span> <span class="arrow-up">&#8211;</span> Will my electrical service panel need replacement?</a> </div>
-            <div id="question5" class="panel-collapse collapse">
-              <div class="panel-body">The current National Electrical Code recommends a minimum l00-amp incoming electrical service. If you service panel provides less, it should be upgraded to this level or better to meet today's home requirements. Most new homes are wired with 200-amp service.</div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion" href="#question6" class="collapsed"> <span class="arrow-down">+</span> <span class="arrow-up">&#8211;</span> Is my home's electrical system adequately grounded?</a> </div>
-            <div id="question6" class="panel-collapse collapse">
-              <div class="panel-body"> Ground wiring protects a home and its occupants in case of an electrical fault, such as a short-circuit. But grounding also protects expensive electronic equipment like computers and many appliances. An electrician can quickly check and add grounding capacity if needed.</div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion" href="#question7" class="collapsed"> <span class="arrow-down">+</span> <span class="arrow-up">&#8211;</span> Will you use all-copper wiring for any new installation?</a> </div>
-            <div id="question7" class="panel-collapse collapse">
-              <div class="panel-body">Solid copper wiring is the material of choice for new homes of renovations. Although 14-gage wire is allowed for many circuits, it's smart to install heavier 12-guage wiring, which costs a little more but can handle more electrical current, making it safer and more energy-efficient.</div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion" href="#question8" class="collapsed"> <span class="arrow-down">+</span> <span class="arrow-up">&#8211;</span> Can you provide references from other homeowners?</a> </div>
-            <div id="question8" class="panel-collapse collapse">
-              <div class="panel-body">Every tradesperson or electrician is only as good as his or her reputation. If you have never contracted with the electrician who answered you call, it's fair to ask for the names of other homeowners who have and to give them a call to check the contractor's work.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="divider-lg"></div>
-    </section>
-    
-    <!-- Social navbar -->
-    <section class="content nopad-xs">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-md-6  col-lg-6 newsletter collapsed-block">
-            <div class="row">
-              <div class="col-lg-5  col-md-12 col-sm-12 ">
-                <h4>NEWSLETTER SIGNUP <a class="expander visible-xs" href="#TabBlock-1">+</a></h4>
-              </div>
-              <div class="col-sm-12 col-md-12 col-lg-6 tabBlock" id="TabBlock-1">
-                <p>Enter your email and we'll send you a coupon with 10% off your next order.</p>
-                <form class="form-inline" role="form">
-                  <div class="form-group input-control">
-                    <button type="submit" class="button"><span class="icon-envelop"></span></button>
-                    <input type="text" class="form-control" value="Your E-mail..." onblur="if (this.value == '') {this.value = 'Your E-mail...';}" onfocus="if(this.value == 'Your E-mail...') {this.value = '';}">
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-6 collapsed-block">
-            <h4>FIND US ON<a class="expander visible-xs" href="#TabBlock-2">+</a></h4>
-            <div  class="tabBlock" id="TabBlock-2">
-              <ul class="find-us">
-                <li class="divider"><a href="#" class="animate-scale"><span class="icon icon-facebook-3"></span></a></li>
-                <li class="divider"><a href="#" class="animate-scale"><span class="icon icon-twitter-3"></span></a></li>
-                <li class="divider"><a href="#" class="animate-scale"><span class="icon icon-linkedin-2"></span></a></li>
-                <li class="divider"><a href="#" class="animate-scale"><span class="icon icon-youtube-3"></span></a></li>
-                <li class="divider"><a href="#" class="animate-scale"><span class="icon icon-pinterest-2"></span></a></li>
-                <li class="divider"><a href="#" class="animate-scale"><span class="icon icon-googleplus-2"></span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- //end Social navbar --> 
-    
-    <!-- Footer -->
-    <footer>
-      <section class="footer-navbar">
-        <div class="container content nopad-xs">
-          <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-4 hidden-xs animate fadeUp">
-              <div class="copyright-text"> © 2015 Electrical Experts. All Rights Reserved. </div>              <div class="footer-logo"><img src="images/electrical/logo.png" alt="" class="img-responsive"/><a href="#"><span class="color">Electrical</span> Experts</a></div>
-</div>
-            <div class="col-sm-6 col-md-8 col-lg-8">
-              <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-4  collapsed-block animate fadeUp">
-                  <h5>Information<a class="expander visible-xs" href="#TabBlock-3">+</a></h5>
-                  <div  class="tabBlock" id="TabBlock-3">
-                    <ul class="menu">                      <li><a href="electrical-team.html">About Us</a></li>
-<li><a href="#">Privacy Notice</a></li>
-                      <li><a href="#">Conditions of Use</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="clearfix visible-sm"></div>
-                <div class="col-sm-6 col-md-4 col-lg-4  collapsed-block animate fadeUp">
-                  <h5>Customer service<a class="expander visible-xs" href="#TabBlock-4">+</a></h5>
-                  <div  class="tabBlock" id="TabBlock-4">
-                    <ul class="menu">
-                      <li><a href="#">Online support</a></li>
-                      <li><a href="#">Help & FAQs</a></li>
-                      <li><a href="#">Call Center</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-4 collapsed-block animate fadeUp">
-                  <h5>CUSTOM HTML BLOCK<a class="expander visible-xs" href="#TabBlock-6">+</a></h5>
-                  <div  class="tabBlock" id="TabBlock-6">
-                    <ul class="menu">
-                      <li><span class="icon icon-house"></span> 7563 St. Vincent Place, Glasgow</li>
-                      <li><span class="icon icon-phone-4"></span> 321321321, 321321321</li>
-                      <li><span class="icon icon-envelop"></span> <a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
-                      <li><span class="icon icon-skype-2"></span> <a href="#">shop.test</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </footer>
-    <div id="outer-overlay"></div>
-    <!-- //end Footer --></div>
-</div>
+	<div id="outer">
+		<div id="outer-canvas">
+			<!-- Navbar -->
+			<header>
+				<!-- Back to top -->
+				<div class="back-to-top">on top</div>
+				<!-- //end Back to top -->
+				<section class="navbar">
+					<div class="background">
+						<div class="container">
+							<!-- Logo -->
+							<div class="navbar-logo pull-left"> <img src="images/electrical/logo.gif" alt="" /> <a
+									class="logo" href="index.html">Electrical&nbsp;Experts</a>
+								<div class="header-img"><img src="images/electrical/header-img.png" alt="" /></div>
+							</div>
+							<!-- //end Logo -->
+							<!-- Phone -->
+							<div class="navbar-contact pull-right">
+								<a href="#" class="btn btn-default btn-labeled pull-right"> <span class="btn-label"><i
+											class="icon icon-mobile"></i></span>Request a callback</a>
+								<div class="navbar-phone pull-right">24/7 Emergency Service, Call<strong>
+										123-456-7890</strong></div>
+							</div>
+							<!-- //End Phone -->
+						</div>
+						<!-- Main menu -->
+						<div id="navbar-main-menu-outer">
+							<div class="container">
+								<dl class="navbar-main-menu hidden-xs">
+									<dt class="item">
+										<a href="{% url 'index' %}" class="btn-main">Home</a>
+									</dt>
+									<dd></dd>
+									<dt class="item">
+										<a href="{% url 'services' %}" class="btn-main">Services</a>
+									</dt>
+									<dd></dd>
+									<dt class="item">
+										<a href="{% url 'rates' %}" class="btn-main">Rates</a>
+									</dt>
+									<dd></dd>
+									<dt class="item">
+										<a href="{% url 'faq' %}" class="btn-main">FAQ</a>
+									</dt>
+									<dd></dd>
+									<dt class="item">
+										<a href="{% url 'reviews' %}" class="btn-main">Reviews</a>
+									</dt>
+									<dd></dd>
+									<dt class="item">
+										<a href="{% url 'contacts' %}" class="btn-main">Contact Us</a>
+									</dt>
+									<dd></dd>
+								</dl>
+								<!-- Search -->
+								<form class="
+									navbar-search
+									form-inline
+									visible-lg
+									pull-right
+								" role="form">
+									<div class="form-group">
+										<button type="submit" class="button">
+											<span class="icon-search-2"></span>
+										</button>
+										<input type="text" class="form-control" value="Search"
+											onblur="if (this.value == '') {this.value = 'Search';}"
+											onfocus="if(this.value == 'Search') {this.value = '';}" />
+									</div>
+								</form>
+								<!-- //end Search -->
+							</div>
+						</div>
+						<!-- //end Main menu -->
+					</div>
+					<!-- Mobile menu -->
+					<div class="container visible-xs">
+						<div class="mobile-nav row">
+							<div class="nav-item item-01"><a href="#" id="off-canvas-menu-toggle"><span
+										class="icon icon-list-4"></span></a></div>
+							<div class="nav-item item-02"><a href="#"></a></div>
+							<div class="nav-item item-03"><a href="#"></a></div>
+							<div class="nav-item item-04"><a href="#"><span class="icon icon-search-2"></span></a>
+								<div class="tab-content">
+									<!-- Search -->
+									<form class="navbar-search form-inline" role="form">
+										<div class="form-group">
+											<button type="submit" class="button"><span
+													class="icon-search-2"></span></button>
+											<input type="text" class="form-control" value="Search"
+												onblur="if (this.value == '') {this.value = 'Search';}"
+												onfocus="if(this.value == 'Search') {this.value = '';}">
+										</div>
+									</form>
+									<!-- //end Search -->
+								</div>
+							</div>
+						</div>
+					</div>
 
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> 
-<!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]--> 
-<script src="js/jquery-1.10.2.min.js"></script> 
-<script src="js/jquery.easing.1.3.js"></script> 
-<script src="js/jquery.ui.touch-punch.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/jquery.flexslider.js"></script> 
-<script src="js/jquery.parallax.js"></script> 
-<script src="js/jquery.inview.js"></script> 
-<script src="js/superfish.js"></script> 
-<script src="js/supersubs.js"></script> 
-<script src="js/jquery.glide.js"></script> 
-<script src="js/jquery.lettering-0.6.min.js"></script> 
-<script src="js/jquery.jscrollpane.min.js"></script> 
-<script src="js/electrical.js"></script>
+					<!-- //end Mobile menu -->
+					<!-- Navbar switcher -->
+					<div class="navbar-switcher-container">
+						<div class="navbar-switcher"> <span class="i-inactive"><img
+									src="images/electrical/icon-electric.png" alt=""></span> <span
+								class="i-active icon-cancel-3"></span> </div>
+					</div>
+					<!-- //end Navbar switcher -->
+
+				</section>
+
+				<!-- Navbar height -->
+				<div class="navbar-height-inner"></div>
+				<!-- Navbar height -->
+
+				<!-- Navbar height -->
+				<div class="navbar-height"></div>
+				<!-- Navbar height -->
+
+			</header>
+			<!-- //end Navbar -->
+
+			<!-- Social widgets -->
+			<section class="social-widgets hidden-xs">
+				<ul class="items">
+					<li class="item item-01 facebook"> <a href="social/facebook.html" class="tab-icon"><span
+								class="icon-facebook-3"></span></a>
+						<div class="tab-content">
+							<div class="title">FACEBOOK</div>
+							<div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
+						</div>
+					</li>
+					<li class="item item-02 twitter"> <a href="social/twitter.html" class="tab-icon"><span
+								class="icon-twitter-3"></span></a>
+						<div class="tab-content">
+							<div class="title">TWITTER FEEDS</div>
+							<div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
+						</div>
+					</li>
+					<li class="item item-03 youtube"> <a href="social/youtubevideo.html" class="tab-icon"><span
+								class="icon icon-youtube-3"></span></a>
+						<div class="tab-content">
+							<div class="title">Video</div>
+							<div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<!-- //end Social widgets -->
+			<!-- Breadcrumbs -->
+			<section class="container">
+				<nav class="breadcrumbs"> <a href="index.html">Home</a> <span class="divider">&#8250;</span>Frequently
+					Asked Questions</nav>
+			</section>
+			<!-- //end Breadcrumbs -->
+
+			<section class="content grey-container">
+				<div class="container">
+					<h3>Frequently Asked Questions </h3>
+					<p class="font-lg">Here are some questions everyone should ask their electrician before starting
+						work: </p>
+					<div class="panel-group accordion-faq" id="faq-accordion">
+						<div class="panel">
+							<div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion"
+									href="#question1"> <span class="arrow-down">+</span> <span
+										class="arrow-up">&#8211;</span> Are you licensed in this city?</a> </div>
+							<div id="question1" class="panel-collapse collapse in">
+								<div class="panel-body"> Not all states, counties or towns regulate or require licenses
+									for electricians, but it's prudent to check first with your local building
+									department. Also ask if electrical work in your city much adhere to standards
+									established by the National Electrical Code.</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion"
+									href="#question2" class="collapsed"> <span class="arrow-down">+</span> <span
+										class="arrow-up">&#8211;</span> Will I have to apply for a permit?</a> </div>
+							<div id="question2" class="panel-collapse collapse">
+								<div class="panel-body"> If a permit is required, the electrician often will make the
+									application for the homeowner. Some municipalities allow homeowners to do minor
+									electrical repairs and installations if they first secure a permit and have the work
+									inspected when complete. </div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion"
+									href="#question3" class="collapsed"> <span class="arrow-down">+</span> <span
+										class="arrow-up">&#8211;</span> Are there any hidden costs for the work?</a>
+							</div>
+							<div id="question3" class="panel-collapse collapse">
+								<div class="panel-body"> The electrician should do a thorough preliminary inspection and
+									provide you with a firm, accurate estimate of the work involved, along with the cost
+									of fixtures or wiring that will be installed. If additional work is necessary, it
+									can be negotiated and billed separately. </div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion"
+									href="#question4" class="collapsed"> <span class="arrow-down">+</span> <span
+										class="arrow-up">&#8211;</span> If my service needs upgrading, will the entire
+									house have to be rewired?</a> </div>
+							<div id="question4" class="panel-collapse collapse">
+								<div class="panel-body">Unless you live in a very old home with antiquated wiring, you
+									probably won't have to replace your existing electrical lines. However, if you
+									require more electrical capacity in certain rooms, new wiring runs and additional
+									outlets are likely to be needed. </div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion"
+									href="#question5" class="collapsed"> <span class="arrow-down">+</span> <span
+										class="arrow-up">&#8211;</span> Will my electrical service panel need
+									replacement?</a> </div>
+							<div id="question5" class="panel-collapse collapse">
+								<div class="panel-body">The current National Electrical Code recommends a minimum
+									l00-amp incoming electrical service. If you service panel provides less, it should
+									be upgraded to this level or better to meet today's home requirements. Most new
+									homes are wired with 200-amp service.</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion"
+									href="#question6" class="collapsed"> <span class="arrow-down">+</span> <span
+										class="arrow-up">&#8211;</span> Is my home's electrical system adequately
+									grounded?</a> </div>
+							<div id="question6" class="panel-collapse collapse">
+								<div class="panel-body"> Ground wiring protects a home and its occupants in case of an
+									electrical fault, such as a short-circuit. But grounding also protects expensive
+									electronic equipment like computers and many appliances. An electrician can quickly
+									check and add grounding capacity if needed.</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion"
+									href="#question7" class="collapsed"> <span class="arrow-down">+</span> <span
+										class="arrow-up">&#8211;</span> Will you use all-copper wiring for any new
+									installation?</a> </div>
+							<div id="question7" class="panel-collapse collapse">
+								<div class="panel-body">Solid copper wiring is the material of choice for new homes of
+									renovations. Although 14-gage wire is allowed for many circuits, it's smart to
+									install heavier 12-guage wiring, which costs a little more but can handle more
+									electrical current, making it safer and more energy-efficient.</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="panel-heading"> <a data-toggle="collapse" data-parent="#faq-accordion"
+									href="#question8" class="collapsed"> <span class="arrow-down">+</span> <span
+										class="arrow-up">&#8211;</span> Can you provide references from other
+									homeowners?</a> </div>
+							<div id="question8" class="panel-collapse collapse">
+								<div class="panel-body">Every tradesperson or electrician is only as good as his or her
+									reputation. If you have never contracted with the electrician who answered you call,
+									it's fair to ask for the names of other homeowners who have and to give them a call
+									to check the contractor's work.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="divider-lg"></div>
+			</section>
+
+			<!-- Social navbar -->
+			<section class="content nopad-xs">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6 col-md-6  col-lg-6 newsletter collapsed-block">
+							<div class="row">
+								<div class="col-lg-5  col-md-12 col-sm-12 ">
+									<h4>NEWSLETTER SIGNUP <a class="expander visible-xs" href="#TabBlock-1">+</a></h4>
+								</div>
+								<div class="col-sm-12 col-md-12 col-lg-6 tabBlock" id="TabBlock-1">
+									<p>Enter your email and we'll send you a coupon with 10% off your next order.</p>
+									<form class="form-inline" role="form">
+										<div class="form-group input-control">
+											<button type="submit" class="button"><span
+													class="icon-envelop"></span></button>
+											<input type="text" class="form-control" value="Your E-mail..."
+												onblur="if (this.value == '') {this.value = 'Your E-mail...';}"
+												onfocus="if(this.value == 'Your E-mail...') {this.value = '';}">
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-6 col-lg-6 collapsed-block">
+							<h4>FIND US ON<a class="expander visible-xs" href="#TabBlock-2">+</a></h4>
+							<div class="tabBlock" id="TabBlock-2">
+								<ul class="find-us">
+									<li class="divider"><a href="#" class="animate-scale"><span
+												class="icon icon-facebook-3"></span></a></li>
+									<li class="divider"><a href="#" class="animate-scale"><span
+												class="icon icon-twitter-3"></span></a></li>
+									<li class="divider"><a href="#" class="animate-scale"><span
+												class="icon icon-linkedin-2"></span></a></li>
+									<li class="divider"><a href="#" class="animate-scale"><span
+												class="icon icon-youtube-3"></span></a></li>
+									<li class="divider"><a href="#" class="animate-scale"><span
+												class="icon icon-pinterest-2"></span></a></li>
+									<li class="divider"><a href="#" class="animate-scale"><span
+												class="icon icon-googleplus-2"></span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- //end Social navbar -->
+
+			<!-- Footer -->
+			<footer>
+				<section class="footer-navbar">
+					<div class="container content nopad-xs">
+						<div class="row">
+							<div class="col-sm-6 col-md-4 col-lg-4 hidden-xs animate fadeUp">
+								<div class="copyright-text"> © 2015 Electrical Experts. All Rights Reserved. </div>
+								<div class="footer-logo"><img src="images/electrical/logo.png" alt=""
+										class="img-responsive" /><a href="#"><span class="color">Electrical</span>
+										Experts</a></div>
+							</div>
+							<div class="col-sm-6 col-md-8 col-lg-8">
+								<div class="row">
+									<div class="col-sm-6 col-md-4 col-lg-4  collapsed-block animate fadeUp">
+										<h5>Information<a class="expander visible-xs" href="#TabBlock-3">+</a></h5>
+										<div class="tabBlock" id="TabBlock-3">
+											<ul class="menu">
+												<li><a href="electrical-team.html">About Us</a></li>
+												<li><a href="#">Privacy Notice</a></li>
+												<li><a href="#">Conditions of Use</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="clearfix visible-sm"></div>
+									<div class="col-sm-6 col-md-4 col-lg-4  collapsed-block animate fadeUp">
+										<h5>Customer service<a class="expander visible-xs" href="#TabBlock-4">+</a></h5>
+										<div class="tabBlock" id="TabBlock-4">
+											<ul class="menu">
+												<li><a href="#">Online support</a></li>
+												<li><a href="#">Help & FAQs</a></li>
+												<li><a href="#">Call Center</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-sm-6 col-md-4 col-lg-4 collapsed-block animate fadeUp">
+										<h5>CUSTOM HTML BLOCK<a class="expander visible-xs" href="#TabBlock-6">+</a>
+										</h5>
+										<div class="tabBlock" id="TabBlock-6">
+											<ul class="menu">
+												<li><span class="icon icon-house"></span> 7563 St. Vincent Place,
+													Glasgow</li>
+												<li><span class="icon icon-phone-4"></span> 321321321, 321321321</li>
+												<li><span class="icon icon-envelop"></span> <a
+														href="mailto:info@mydomain.com">info@mydomain.com</a></li>
+												<li><span class="icon icon-skype-2"></span> <a href="#">shop.test</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</footer>
+			<div id="outer-overlay"></div>
+			<!-- //end Footer -->
+		</div>
+	</div>
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+		integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script src="{% static 'app/js/jquery.easing.1.3.js' %}"></script>
+	<script src="{% static 'app/js/jquery.ui.touch-punch.min.js' %}"></script>
+	<script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'app/js/jquery.flexslider.js' %}"></script>
+	<script src="{% static 'app/js/jquery.parallax.js' %}"></script>
+	<script src="{% static 'app/js/jquery.inview.js' %}"></script>
+	<script src="{% static 'app/js/superfish.js' %}"></script>
+	<script src="{% static 'app/js/supersubs.js' %}"></script>
+	<script src="{% static 'app/js/jquery.glide.js' %}"></script>
+	<script src="{% static 'app/js/jquery.lettering-0.6.min.js' %}"></script>
+	<script src="{% static 'app/js/jquery.jscrollpane.min.js' %}"></script>
+	<script src="{% static 'app/js/electrical.js' %}"></script>
 </body>
 
 </html>
