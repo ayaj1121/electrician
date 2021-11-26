@@ -2,4 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH= /home/lznwsqjj/electrician/
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R app $DEPLOYPATH
+    - /bin/cp -R electrician $DEPLOYPATH
+    - /bin/cp manage.py $DEPLOYPATH
