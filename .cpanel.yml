@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH= /home/lznwsqjj/public_html/
-    - /bin/cp -r /home/lznwsqjj/repositories/electrician/* $DEPLOYPATH
+    -export DEPLOYPATH= /home/lznwsqjj/public_html/
+    -/bin/cp -R * $DEPLOYPATH
