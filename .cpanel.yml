@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH= /home/lznwsqjj/public_html/electrician/
+    - export DEPLOYPATH=/home/lznwsqjj/public_html/electrician/
     - /bin/cp -R app $DEPLOYPATH
     - /bin/cp -R electrician $DEPLOYPATH
     - /bin/cp manage.py $DEPLOYPATH
