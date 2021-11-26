@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH= /home/lznwsqjj/electrician/
-    - /bin/cp * $DEPLOYPATH
+    - /bin/cp -R * $DEPLOYPATH
