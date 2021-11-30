@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} {% load filter %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -10,7 +10,11 @@
 		<meta name="description" content="" />
 		<meta name="author" content="" />
 		<title>Electrical HTML Template</title>
-		<link rel="shortcut icon" href="{% static 'app/images/fav.png' %}" type="image/png" />
+		<link
+			rel="shortcut icon"
+			href="{% static 'app/images/fav.png' %}"
+			type="image/png"
+		/>
 		<link
 			rel="shortcut icon"
 			href="{% static 'app/images/fav.png' %}"
@@ -118,20 +122,9 @@
 						<div class="background">
 							<div class="container">
 								<!-- Logo -->
-								<div class="navbar-logo pull-left">
-									<img
-										src="images/electrical/logo.gif"
-										alt=""
-									/>
-									<a class="logo" href="index.html"
-										>Electrical&nbsp;Experts</a
-									>
-									<div class="header-img">
-										<img
-											src="images/electrical/header-img.png"
-											alt=""
-										/>
-									</div>
+								<div class="navbar-logo pull-left"> <img src="{% static 'app/images/electrical/logo.gif' %}" alt="" /> <a
+									class="logo" href="index.html">MB&nbsp;Electricals</a>
+								<div class="header-img"><img src="{% static 'app/images/electrical/header-img.png' %}" alt="" /></div>
 								</div>
 								<!-- //end Logo -->
 								<!-- Phone -->
@@ -378,22 +371,27 @@
 
 				<section class="content grey-container">
 					<div class="container">
-						<h2>Rates</h2>
+						{% for key,value in dicts.items %}
+						<h2>{{key}}</h2>
 						<table class="table table-striped">
 							<tbody>
 								<tr>
-									<th class="col1 text-left">Job</th>
-									<th class="col2 text-left">Details</th>
-								
+									{% for col in cols %}
+									<th class="col1 text-left">{{col}}</th>
+
+									{% endfor %}
 								</tr>
+								{% for Rates in value %}
 								<tr>
-									<td>Replace light fitting</td>
-									
-									<td class="text-center">0.5-1 hour</td>
+									<td class="text-center">
+										{{Rates.Service_Name}}
+									</td>
+									<td class="text-center">{{Rates.Price}}</td>
 								</tr>
-		
+								{% endfor %}
 							</tbody>
 						</table>
+						{% endfor %}
 						<div class="divider-lg"></div>
 					</div>
 				</section>

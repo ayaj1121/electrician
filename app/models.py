@@ -16,4 +16,8 @@ class Rates(models.Model):
     Price=models.IntegerField()
     Category=models.ForeignKey(RatesCategory,on_delete=models.DO_NOTHING,blank=True)
 
+class Images(models.Model):
+    Image_Name=models.CharField(max_length=200,null=True,blank=True)
+    Description=models.TextField(null=True,blank=True)
+    Image=models.ImageField()
         
