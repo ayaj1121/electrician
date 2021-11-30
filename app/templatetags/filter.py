@@ -1,5 +1,5 @@
 from django import template
-from ..models import Rates
+from ..models import Rate
 
 register = template.Library()
 

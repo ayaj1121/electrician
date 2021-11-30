@@ -25,7 +25,7 @@ SECRET_KEY = 'l+^+g-0b7e26k*949oj51i#m$d02n%=6@=@flm&oeq4b02u7hq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["satkar.online","www.satakar.online"]
+ALLOWED_HOSTS = ["satkar.online","www.satakar.online","127.0.0.1"]
 
 
 # Application definition
@@ -93,6 +93,12 @@ DATABASES = {
     # }
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'heimdall.protondns.net'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'memonayaj@satkar.online'
+EMAIL_HOST_PASSWORD = '9[2f6Ikaa5L-JB'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
