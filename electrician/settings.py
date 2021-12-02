@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'satkaron_electrician',
         'USER': 'satkaron_akhil786',
         'PASSWORD': 'akhil9601657865',
-        'HOST': '5.9.19.146',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
