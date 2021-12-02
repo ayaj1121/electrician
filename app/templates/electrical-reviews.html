@@ -41,7 +41,7 @@
 			padding: 0 4px;
 		}
 
-	
+
 		/* Create four equal columns that sits next to each other */
 		.gallerycolumn {
 			flex: 25%;
@@ -249,7 +249,7 @@
 				<div class="container" id="gallerycontainer">
 					<h2>Reviews</h2>
 					<div class="galleryrow" id="galleryrowid">
-					
+
 					</div>
 				</div>
 				<div class="divider-lg"></div>
@@ -261,41 +261,14 @@
 		<section class="content nopad-xs">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6 col-md-6  col-lg-6 newsletter collapsed-block">
-						<div class="row">
-							<div class="col-lg-5  col-md-12 col-sm-12 ">
-								<h4>NEWSLETTER SIGNUP <a class="expander visible-xs" href="#TabBlock-1">+</a></h4>
-							</div>
-							<div class="col-sm-12 col-md-12 col-lg-6 tabBlock" id="TabBlock-1">
-								<p>Enter your email and we'll send you a coupon with 10% off your next order.</p>
-								<form class="form-inline" role="form">
-									<div class="form-group input-control">
-										<button type="submit" class="button"><span class="icon-envelop"></span></button>
-										<input type="text" class="form-control" value="Your E-mail..."
-											onblur="if (this.value == '') {this.value = 'Your E-mail...';}"
-											onfocus="if(this.value == 'Your E-mail...') {this.value = '';}">
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
+					
 					<div class="col-sm-6 col-md-6 col-lg-6 collapsed-block">
 						<h4>FIND US ON<a class="expander visible-xs" href="#TabBlock-2">+</a></h4>
 						<div class="tabBlock" id="TabBlock-2">
 							<ul class="find-us">
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-facebook-3"></span></a></li>
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-twitter-3"></span></a></li>
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-linkedin-2"></span></a></li>
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-youtube-3"></span></a></li>
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-pinterest-2"></span></a></li>
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-googleplus-2"></span></a></li>
-							</ul>
+								<li class="divider">
+									<a href="https://www.instagram.com/m.b_electrical_and_service/" target="_blank" class="animate-scale"><span class="icon icon-instagram-2"></span></a>
+								</li>
 						</div>
 					</div>
 				</div>
@@ -310,9 +283,9 @@
 					<div class="row">
 						<div class="col-sm-6 col-md-4 col-lg-4 hidden-xs animate fadeUp">
 							<div class="copyright-text"> © 2021 MB Electricals. All Rights Reserved. </div>
-							<div class="footer-logo"><img src="/static/app/images/electrical/logo.png" alt=""
-									class="img-responsive" /><a href="#"><span class="color">Electrical</span>
-									Experts</a></div>
+								<div class="footer-logo"><img src="/static/app/images/electrical/logo.png" alt=""
+										class="img-responsive" /><a href="#"><span class="color">MB</span>
+										Electricals</a></div>
 						</div>
 						<div class="col-sm-6 col-md-8 col-lg-8">
 							<div class="row">
@@ -320,9 +293,8 @@
 									<h5>Information<a class="expander visible-xs" href="#TabBlock-3">+</a></h5>
 									<div class="tabBlock" id="TabBlock-3">
 										<ul class="menu">
-											<li><a href="electrical-team.html">About Us</a></li>
-											<li><a href="#">Privacy Notice</a></li>
-											<li><a href="#">Conditions of Use</a></li>
+											<a href="{% url 'contacts' %}">Contact Us</a>
+
 										</ul>
 									</div>
 								</div>
@@ -331,9 +303,8 @@
 									<h5>Customer service<a class="expander visible-xs" href="#TabBlock-4">+</a></h5>
 									<div class="tabBlock" id="TabBlock-4">
 										<ul class="menu">
-											<li><a href="#">Online support</a></li>
-											<li><a href="#">Help & FAQs</a></li>
-											<li><a href="#">Call Center</a></li>
+											<a href="{% url 'faq' %}">Help & FAQs</a>
+
 										</ul>
 									</div>
 								</div>
@@ -412,82 +383,84 @@
 			}
 		}
 
-		let gallerycolumn=[],galleryrow;
+		let gallerycolumn = [],
+			galleryrow;
 		galleryrow = document.getElementById('galleryrowid');
-		for (let index = 0; index < 4; index++) {		
-		gallerycolumn[index] = document.createElement('div');
-		gallerycolumn[index].classList.add('gallerycolumn');
-		gallerycolumn[index].classList.add('gallery');
-		galleryrow.appendChild(gallerycolumn[index])
+		for (let index = 0; index < 4; index++) {
+			gallerycolumn[index] = document.createElement('div');
+			gallerycolumn[index].classList.add('gallerycolumn');
+			gallerycolumn[index].classList.add('gallery');
+			galleryrow.appendChild(gallerycolumn[index])
 		}
-		let pagecount=1;
+		let pagecount = 1;
 		let loadmore = document.getElementById('loadmore'); // selecting the form
 		loadmore.addEventListener('click', function (event) { // 1
 			event.preventDefault()
 			console.log("loadmore");
 			var gallerycontainer = document.querySelector("#gallerycontainer");
 
-			axios.get('/getimages',{params:{pagecount}}) // 4
-			.then((response) => {
-				console.log(pagecount);
-				console.log("response",response.data);
-				console.log(response.data.length);
-				if (response.data.length>0) {
-					pagecount++;
-				
-				
-				for (let index = 0; index < response.data.length; index++) {
-						console.log("index",index);
-						if (index%4==0) {
-							console.log("start1");
-							let anchortag = document.createElement('a');
-							anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
-							gallerycolumn[0].appendChild(anchortag)
-							console.log(index);
-							let imgtag = document.createElement('img');
-							imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
-							imgtag.setAttribute('style', 'width: 100%;');
-							anchortag.appendChild(imgtag)
-							console.log("end1");
+			axios.get('/getimages', {
+					params: {
+						pagecount
+					}
+				}) // 4
+				.then((response) => {
+					console.log(pagecount);
+					console.log("response", response.data);
+					console.log(response.data.length);
+					if (response.data.length > 0) {
+						pagecount++;
 
-						}
-						else if(index%4==1) {
-							console.log("start2");
-							let anchortag = document.createElement('a');
-							anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
-							gallerycolumn[1].appendChild(anchortag)
-							console.log(index);
-							let imgtag = document.createElement('img');
-							imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
-							imgtag.setAttribute('style', 'width: 100%;');
-							anchortag.appendChild(imgtag)
-							console.log("end2");
 
-						}
-						else if(index%4==2) {
-							console.log("start3");
-							let anchortag = document.createElement('a');
-							anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
-							gallerycolumn[2].appendChild(anchortag)
-							console.log(index);
-							let imgtag = document.createElement('img');
-							imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
-							imgtag.setAttribute('style', 'width: 100%;');
-							anchortag.appendChild(imgtag)
-						}
-						else if(index%4==3) {
-							let anchortag = document.createElement('a');
-							anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
-							gallerycolumn[3].appendChild(anchortag)
-							console.log(index);
-							let imgtag = document.createElement('img');
-							imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
-							imgtag.setAttribute('style', 'width: 100%;');
-							anchortag.appendChild(imgtag)
+						for (let index = 0; index < response.data.length; index++) {
+							console.log("index", index);
+							if (index % 4 == 0) {
+								console.log("start1");
+								let anchortag = document.createElement('a');
+								anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
+								gallerycolumn[0].appendChild(anchortag)
+								console.log(index);
+								let imgtag = document.createElement('img');
+								imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
+								imgtag.setAttribute('style', 'width: 100%;');
+								anchortag.appendChild(imgtag)
+								console.log("end1");
+
+							} else if (index % 4 == 1) {
+								console.log("start2");
+								let anchortag = document.createElement('a');
+								anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
+								gallerycolumn[1].appendChild(anchortag)
+								console.log(index);
+								let imgtag = document.createElement('img');
+								imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
+								imgtag.setAttribute('style', 'width: 100%;');
+								anchortag.appendChild(imgtag)
+								console.log("end2");
+
+							} else if (index % 4 == 2) {
+								console.log("start3");
+								let anchortag = document.createElement('a');
+								anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
+								gallerycolumn[2].appendChild(anchortag)
+								console.log(index);
+								let imgtag = document.createElement('img');
+								imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
+								imgtag.setAttribute('style', 'width: 100%;');
+								anchortag.appendChild(imgtag)
+							} else if (index % 4 == 3) {
+								let anchortag = document.createElement('a');
+								anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
+								gallerycolumn[3].appendChild(anchortag)
+								console.log(index);
+								let imgtag = document.createElement('img');
+								imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
+								imgtag.setAttribute('style', 'width: 100%;');
+								anchortag.appendChild(imgtag)
+							}
 						}
 					}
-					}
-					console.log("gallery",galleryrow);
+					console.log("gallery", galleryrow);
 					gallerycontainer.appendChild(galleryrow)
 					$('.gallery').magnificPopup({
 
@@ -510,7 +483,6 @@
 				}) // 6
 		})
 		document.getElementById("loadmore").click();
-
 	</script>
 
 </body>

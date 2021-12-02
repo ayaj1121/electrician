@@ -193,31 +193,7 @@
 		<!-- //end Navbar -->
 
 		<!-- Social widgets -->
-		<section class="social-widgets hidden-xs">
-			<ul class="items">
-				<li class="item item-01 facebook"> <a href="social/facebook.html" class="tab-icon"><span
-							class="icon-facebook-3"></span></a>
-					<div class="tab-content">
-						<div class="title">FACEBOOK</div>
-						<div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
-					</div>
-				</li>
-				<li class="item item-02 twitter"> <a href="social/twitter.html" class="tab-icon"><span
-							class="icon-twitter-3"></span></a>
-					<div class="tab-content">
-						<div class="title">TWITTER FEEDS</div>
-						<div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
-					</div>
-				</li>
-				<li class="item item-03 youtube"> <a href="social/youtubevideo.html" class="tab-icon"><span
-							class="icon icon-youtube-3"></span></a>
-					<div class="tab-content">
-						<div class="title">Video</div>
-						<div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
-					</div>
-				</li>
-			</ul>
-		</section>
+	
 		<!-- //end Social widgets -->
 		<!-- Breadcrumbs -->
 		<section class="container">
@@ -312,40 +288,14 @@
 		<section class="content nopad-xs">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6 col-md-6  col-lg-6 newsletter collapsed-block">
-						<div class="row">
-							<div class="col-lg-5  col-md-12 col-sm-12 ">
-								<h4>NEWSLETTER SIGNUP <a class="expander visible-xs" href="#TabBlock-1">+</a></h4>
-							</div>
-							<div class="col-sm-12 col-md-12 col-lg-6 tabBlock" id="TabBlock-1">
-								<p>Enter your email and we'll send you a coupon with 10% off your next order.</p>
-								<form class="form-inline" role="form">
-									<div class="form-group input-control">
-										<button type="submit" class="button"><span class="icon-envelop"></span></button>
-										<input type="text" class="form-control" value="Your E-mail..."
-											onblur="if (this.value == '') {this.value = 'Your E-mail...';}"
-											onfocus="if(this.value == 'Your E-mail...') {this.value = '';}">
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
+
 					<div class="col-sm-6 col-md-6 col-lg-6 collapsed-block">
 						<h4>FIND US ON<a class="expander visible-xs" href="#TabBlock-2">+</a></h4>
 						<div class="tabBlock" id="TabBlock-2">
 							<ul class="find-us">
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-facebook-3"></span></a></li>
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-twitter-3"></span></a></li>
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-linkedin-2"></span></a></li>
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-youtube-3"></span></a></li>
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-pinterest-2"></span></a></li>
-								<li class="divider"><a href="#" class="animate-scale"><span
-											class="icon icon-googleplus-2"></span></a></li>
+								<li class="divider">
+									<a href="https://www.instagram.com/m.b_electrical_and_service/" target="_blank" class="animate-scale"><span class="icon icon-instagram-2"></span></a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -361,9 +311,9 @@
 					<div class="row">
 						<div class="col-sm-6 col-md-4 col-lg-4 hidden-xs animate fadeUp">
 							<div class="copyright-text"> © 2021 MB Electricals. All Rights Reserved. </div>
-							<div class="footer-logo"><img src="images/electrical/logo.png" alt=""
-									class="img-responsive" /><a href="#"><span class="color">Electrical</span>
-									Experts</a></div>
+							<div class="footer-logo"><img src="/static/app/images/electrical/logo.png" alt=""
+									class="img-responsive" /><a href="#"><span class="color">MB</span>
+									Electricals</a></div>
 						</div>
 						<div class="col-sm-6 col-md-8 col-lg-8">
 							<div class="row">
@@ -371,9 +321,8 @@
 									<h5>Information<a class="expander visible-xs" href="#TabBlock-3">+</a></h5>
 									<div class="tabBlock" id="TabBlock-3">
 										<ul class="menu">
-											<li><a href="electrical-team.html">About Us</a></li>
-											<li><a href="#">Privacy Notice</a></li>
-											<li><a href="#">Conditions of Use</a></li>
+											<a href="{% url 'contacts' %}">Contact Us</a>
+
 										</ul>
 									</div>
 								</div>
@@ -382,9 +331,8 @@
 									<h5>Customer service<a class="expander visible-xs" href="#TabBlock-4">+</a></h5>
 									<div class="tabBlock" id="TabBlock-4">
 										<ul class="menu">
-											<li><a href="#">Online support</a></li>
-											<li><a href="#">Help & FAQs</a></li>
-											<li><a href="#">Call Center</a></li>
+											<a href="{% url 'faq' %}">Help & FAQs</a>
+
 										</ul>
 									</div>
 								</div>
