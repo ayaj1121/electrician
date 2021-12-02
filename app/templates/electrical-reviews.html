@@ -420,16 +420,20 @@
 		gallerycolumn[index].classList.add('gallery');
 		galleryrow.appendChild(gallerycolumn[index])
 		}
+		let pagecount=1;
 		let loadmore = document.getElementById('loadmore'); // selecting the form
 		loadmore.addEventListener('click', function (event) { // 1
 			event.preventDefault()
 			console.log("loadmore");
 			var gallerycontainer = document.querySelector("#gallerycontainer");
 
-			axios.get('/getimages') // 4
+			axios.get('/getimages',{params:{pagecount}}) // 4
 			.then((response) => {
-				console.log(response.data);
+				console.log(pagecount);
+				console.log("response",response.data);
 				console.log(response.data.length);
+				if (response.data.length>0) {
+					pagecount++;
 				
 				
 				for (let index = 0; index < response.data.length; index++) {
@@ -481,7 +485,7 @@
 							imgtag.setAttribute('style', 'width: 100%;');
 							anchortag.appendChild(imgtag)
 						}
-
+					}
 					}
 					console.log("gallery",galleryrow);
 					gallerycontainer.appendChild(galleryrow)

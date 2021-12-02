@@ -98,10 +98,12 @@ def reviews(request):
 
 
 def getimages(request):
-    # offset=re
-    # limit=
+    pagecount=int(request.GET.get('pagecount'))
+    print(str(pagecount))
+    offset=(pagecount-1)*12
+    limit=pagecount*12
     # data=Image.objects.all()[0:5].values()
-    images=list(Image.objects.all()[0:12].values())
+    images=list(Image.objects.all()[offset:limit].values())
     return JsonResponse(images,safe=False)
 
 class mail(Thread):
