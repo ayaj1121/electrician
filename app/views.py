@@ -1,3 +1,6 @@
+from django.http.response import JsonResponse
+from django.utils import timezone
+import datetime
 from django.shortcuts import render
 import smtplib
 from django.core.mail import send_mail
@@ -11,14 +14,34 @@ from django.template.loader import get_template
 from django.conf import settings
 # Create your views here.
 from django.http import HttpResponse
+from django.core import serializers
 
-from app.models import Rate
+from app.models import Appointment, Image, Rate
 import json
-
+import pytz
 
 def index(request):
     if request.method=="POST":
-        print(request.POST.get("First_Name"))
+        print(datetime.date.today())
+        TodaysAppointments=Appointment.objects.filter(Date=datetime.date.today())
+        print("TA",TodaysAppointments)
+        for appoint in TodaysAppointments:
+            if(appoint.Phone==request.POST.get('Phone')):
+                print("true")
+                return JsonResponse({"status": 'Appointment already Scheduled for Today',"status_code":1}) 
+        print(request.POST.get('First_Name'))
+        Appoint=Appointment()
+        Appoint.First_Name=request.POST.get('First_Name')
+        Appoint.Last_Name=request.POST.get('Last_Name')
+        Appoint.Address=request.POST.get('Address')
+        Appoint.Phone=request.POST.get('Phone')
+        Appoint.Apt_Suite=request.POST.get('Apt_Suite')
+        Appoint.Date=request.POST.get('Date')
+        Appoint.Email=request.POST.get('Email')
+        Appoint.save()
+        mail("memonayaj@satkar.online",Appoint.Email,"Appointment Scheduled",Appoint).start()
+        return JsonResponse({"status": 'Your appointment is Scheduled for Today',"status_code":0})
+
     return render(request,'index.html')
 
 def faq(request):
@@ -68,33 +91,40 @@ def contacts(request):
 
 
 def services(request):
-    mail("memonayaj@satkar.online","memonayaj9864@gmail.com","Thank you For you feedback").start()
     return render(request,'electrical-services.html')
 
 def reviews(request):
     return render(request,'electrical-reviews.html')
 
 
+def getimages(request):
+    # offset=re
+    # limit=
+    # data=Image.objects.all()[0:5].values()
+    images=list(Image.objects.all()[0:12].values())
+    return JsonResponse(images,safe=False)
 
 class mail(Thread):
-    def __init__(self,you,to,subject):
+    def __init__(self,you,to,subject,user):
+        print("inside constructor")
         self.you=you
         self.to=to
-        self.subject=subject
+        self.subject=subject    
+        self.user=user
         Thread.__init__(self)
 
     def run(self):
         # me == my email address
         # you == recipient's email address
 
-
+        print("inside run")
         # Create message container - the correct MIME type is multipart/alternative.
         msg = MIMEMultipart('alternative')
         msg['Subject'] = self.subject
         msg['From'] = self.you
         msg['To'] = self.to
         ctx = {
-                'user': "Ajay"
+                'user': self.user
             }
         html = get_template('mail_template.html').render(ctx)
         

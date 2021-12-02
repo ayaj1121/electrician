@@ -1,0 +1,29 @@
+			if (index % 3 == 0) {
+							console.log("startif");
+							console.log(index);
+							gallerycolumn = document.createElement('div');
+							gallerycolumn.classList.add('gallerycolumn');
+							gallerycolumn.classList.add('gallery');
+							galleryrow.appendChild(gallerycolumn)
+							let anchortag = document.createElement('a');
+							anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
+							gallerycolumn.appendChild(anchortag)
+							let imgtag = document.createElement('img');
+							imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
+							imgtag.setAttribute('style', 'width: 100%;');
+							anchortag.appendChild(imgtag)
+							console.log("endif");
+
+						} else {
+							console.log("startelse");
+							let anchortag = document.createElement('a');
+							anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
+							gallerycolumn.appendChild(anchortag)
+							console.log(index);
+							let imgtag = document.createElement('img');
+							imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
+							imgtag.setAttribute('style', 'width: 100%;');
+							anchortag.appendChild(imgtag)
+							console.log("endelse");
+
+						}

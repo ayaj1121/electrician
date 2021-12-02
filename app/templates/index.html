@@ -282,7 +282,7 @@
 						<div class="tab-content">
 							<div class="title">TWITTER FEEDS</div>
 							<div class="loading">
-								<img src="/static/appimages/ajax-loader.gif" alt="" class="ajaxloader" />
+								<img src="/static/app/images/ajax-loader.gif" alt="" class="ajaxloader" />
 							</div>
 						</div>
 					</li>
@@ -381,7 +381,7 @@
 										</div>
 										<div class="form-group">
 											<label>Date:</label>
-											<input type="date" class="form-control" name="date" id="date"  />
+											<input type="date" class="form-control" name="Date" id="Date"  />
 										</div>
 									</div>
 									<div class="col-sm-12 col-md-6">
@@ -549,7 +549,7 @@
 						<div class="col-sm-3 category3">
 							<div class="image-wrapper">
 								<a class="fancybox-gallery" href="#"><img
-										src="{% static 'app/images/gallery/gallery_img.jpg' %}" alt="Image1" />
+										src="/media/img2.png" alt="Image1" />
 									<div class="image-hover">
 										Lorem ipsum dolor sit amet,
 										consectetuer adipiscing celerisque
@@ -1098,8 +1098,8 @@
 		integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script type="text/javascript">
-		var date=document.getElementById('date').value = new Date().toISOString().substring(0, 10);
-		$('#date').attr('min', date);
+		var date=document.getElementById('Date').value = new Date().toISOString().substring(0, 10);
+		$('#Date').attr('min', date);
 		let form = document.getElementById('appointment'); // selecting the form
 
 		form.addEventListener('submit', function (event) { // 1
@@ -1113,9 +1113,11 @@
 			data.append("Phone", document.getElementById('Phone').value)
 			data.append("Apt_Suite", document.getElementById('Apt_Suite').value)
 			data.append("Email", document.getElementById('Email').value)
+			data.append("Date", document.getElementById('Date').value)
 			data.append("csrfmiddlewaretoken", '{{csrf_token}}') // 3
 			axios.post('/', data) // 4
-				.then(function () {
+				.then((response) => {
+					
 					$("#success").fadeIn();
 					$("label.error").each(function () {
 						this.fadeOut();
@@ -1123,6 +1125,12 @@
 					$("#appointment").each(function () {
 						this.reset();
 					});
+					if(response.data.status_code==1 || response.data.status_code==0){
+						console.log(response.data.status);
+						var p = document.querySelector("#success p");
+         				p.innerHTML = response.data.status;					
+					}
+
 				}) // 5
 				.catch(function () {
 					$("#form-appointment").fadeTo(

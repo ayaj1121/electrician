@@ -27,6 +27,50 @@
 	<link href="{% static 'app/css/jquery.jscrollpane.css' %}" rel="stylesheet" />
 	<link href="{% static 'app/css/isotope.css' %}" rel="stylesheet" />
 	<link href="{% static 'app/fonts/flaticon-electrical/flaticon.css' %}" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+		integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		.galleryrow {
+			display: -ms-flexbox;
+			/* IE10 */
+			display: flex;
+			-ms-flex-wrap: wrap;
+			/* IE10 */
+			flex-wrap: wrap;
+			padding: 0 4px;
+		}
+
+	
+		/* Create four equal columns that sits next to each other */
+		.gallerycolumn {
+			flex: 25%;
+			max-width: 25%;
+			padding: 0 4px;
+		}
+
+		.gallerycolumn img {
+			margin-top: 8px;
+			vertical-align: middle;
+			width: 100%;
+		}
+
+		/* Responsive layout - makes a two column-layout instead of four columns */
+		@media screen and (max-width: 800px) {
+			.gallerycolumn {
+				flex: 50%;
+				max-width: 50%;
+			}
+		}
+
+		/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+		@media screen and (max-width: 600px) {
+			.gallerycolumn {
+				flex: 100%;
+				max-width: 100%;
+			}
+		}
+	</style>
 </head>
 
 <body class="responsive">
@@ -73,9 +117,10 @@
 					<div class="background">
 						<div class="container">
 							<!-- Logo -->
-							<div class="navbar-logo pull-left"> <img src="{% static 'app/images/electrical/logo.gif' %}" alt="" /> <a
-								class="logo" href="index.html">MB&nbsp;Electricals</a>
-							<div class="header-img"><img src="{% static 'app/images/electrical/header-img.png' %}" alt="" /></div>
+							<div class="navbar-logo pull-left"> <img src="{% static 'app/images/electrical/logo.gif' %}"
+									alt="" /> <a class="logo" href="index.html">MB&nbsp;Electricals</a>
+								<div class="header-img"><img src="{% static 'app/images/electrical/header-img.png' %}"
+										alt="" /></div>
 							</div>
 							<!-- //end Logo -->
 							<!-- Phone -->
@@ -173,7 +218,7 @@
 					<!-- Navbar switcher -->
 					<div class="navbar-switcher-container">
 						<div class="navbar-switcher"> <span class="i-inactive"><img
-									src="images/electrical/icon-electric.png" alt=""></span> <span
+									src="/static/app/images/electrical/icon-electric.png" alt=""></span> <span
 								class="i-active icon-cancel-3"></span> </div>
 					</div>
 					<!-- //end Navbar switcher -->
@@ -192,31 +237,7 @@
 			<!-- //end Navbar -->
 
 			<!-- Social widgets -->
-			<section class="social-widgets hidden-xs">
-				<ul class="items">
-					<li class="item item-01 facebook"> <a href="social/facebook.html" class="tab-icon"><span
-								class="icon-facebook-3"></span></a>
-						<div class="tab-content">
-							<div class="title">FACEBOOK</div>
-							<div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
-						</div>
-					</li>
-					<li class="item item-02 twitter"> <a href="social/twitter.html" class="tab-icon"><span
-								class="icon-twitter-3"></span></a>
-						<div class="tab-content">
-							<div class="title">TWITTER FEEDS</div>
-							<div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
-						</div>
-					</li>
-					<li class="item item-03 youtube"> <a href="social/youtubevideo.html" class="tab-icon"><span
-								class="icon icon-youtube-3"></span></a>
-						<div class="tab-content">
-							<div class="title">Video</div>
-							<div class="loading"><img src="images/ajax-loader.gif" alt="" class="ajaxloader"></div>
-						</div>
-					</li>
-				</ul>
-			</section>
+
 			<!-- //end Social widgets -->
 			<!-- Breadcrumbs -->
 			<section class="container">
@@ -225,303 +246,121 @@
 			</section>
 			<!-- //end Breadcrumbs -->
 			<section class="content grey-container">
-				<div class="container">
+				<div class="container" id="gallerycontainer">
 					<h2>Reviews</h2>
-					<div class="row">
-						<div class="isotope">
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4 ">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Vivamus euismod nulla vel nunc. Fusce tincidunt, justo congue egestas
-												molestie, tortor tortor blandit erat, et scelerisque metus metus at
-												ipsum. Nunc tristique pede. Ut condimentum mattis est. Duis sit amet
-												augue. Duis sollicitudin, dui ac commodo. Aenean quam. <br>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4 ">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Nunc tristique pede. Ut condimentum mattis est. Duis sit amet augue. Duis
-												sollicitudin, dui ac commodo. Aenean quam. Nulla neque purus,
-												ullamcorper nec, eleifend at, fermentum ut, turpis. Mauris et ligula
-												quis erat dignissim imperdiet. Integer ligula magna, dictum et, pulvinar
-												non ultricies ac, nibh. Aenean quam. Nulla neque purus, </p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4 ">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Vivamus euismod nulla vel nunc. Fusce tincidunt, justo congue egestas
-												molestie, tortor tortor blandit erat, et scelerisque metus metus at
-												ipsum. Nunc tristique pede. Ut condimentum mattis est. Duis sit amet
-												augue. Duis sollicitudin, dui ac commodo. Aenean quam. Nulla neque
-												purus, ullamcorper nec, eleifend at, fermentum ut, turpis. Mauris et
-												ligula quis erat dignissim imperdiet. Integer ligula magna, dictum et,
-												pulvinar non.<br>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Vivamus euismod nulla vel nunc. Fusce tincidunt, justo congue egestas
-												molestie, tortor tortor blandit erat, et scelerisque metus metus at
-												ipsum. Nunc tristique pede. Ut condimentum mattis est. Duis sit amet
-												augue. Duis sollicitudin, dui ac commodo. Aenean quam. Nulla neque
-												purus, ullamcorper nec, eleifend at, fermentum ut, turpis. Mauris et
-												ligula quis erat dignissim imperdiet. Integer ligula magna, dictum et,
-												pulvinar non. Vivamus euismod nulla vel nunc. <br>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4 ">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Nunc tristique pede. Ut condimentum mattis est. Duis sit amet augue. Duis
-												sollicitudin, dui ac commodo. Aenean quam. Nulla neque purus,
-												ullamcorper nec, eleifend at, fermentum ut, turpis. Mauris et ligula
-												quis erat dignissim imperdiet. Integer ligula magna, dictum et, pulvinar
-												non.<br>
-												ultricies ac, nibh. <br>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Duis sit amet augue. Duis sollicitudin, dui ac commodo. Aenean quam.
-												Nulla neque purus, ullamcorper nec, eleifend at, fermentum ut, turpis.
-												Mauris et ligula quis erat dignissim imperdiet. Integer ligula magna,
-												dictum et, pulvinar non.<br>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Vivamus euismod nulla vel nunc. Fusce tincidunt, justo congue egestas
-												molestie, tortor tortor blandit erat, et scelerisque metus metus at
-												ipsum. Nunc tristique pede. Ut condimentum mattis est. Duis sit amet
-												augue. Duis sollicitudin, dui ac commodo. Aenean quam. Nulla neque
-												purus, ullamcorper nec, eleifend at, fermentum ut, turpis. Mauris et
-												ligula quis erat dignissim imperdiet. <br>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Nunc tristique pede. Ut condimentum mattis est. Duis sit amet augue. Duis
-												sollicitudin, dui ac commodo. Aenean quam. Nulla neque purus,
-												ullamcorper nec, eleifend at, fermentum ut, turpis. <br>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Duis sit amet augue. Duis sollicitudin, dui ac commodo. Aenean quam.
-												Nulla neque purus, ullamcorper nec, eleifend at, fermentum ut, turpis.
-												Mauris et ligula quis erat dignissim imperdiet. Integer ligula magna,
-												dictum et, pulvinar non. Mauris et ligula quis erat dignissim imperdiet.
-												<br>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Nunc tristique pede. Ut condimentum itudin, dui ac commodo. Aenean quam.
-												Nulla neque purus, ullamcorper nec, eleifend at, fermentum ut, turpis.
-												<br>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Nunc tristique pede. Ut condimentum mattis est. Duis sit amet augue. Duis
-												sollicitudin, dui ac commodo. Aenean quam. Nulla neque purus,
-												ullamcorper nec, eleifend at, fermentum ut, turpis. <br>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="isotope-item col-sm-6 col-md-4 col-lg-4">
-								<div class="post-block">
-									<div class="inside">
-										<div class="post">
-											<div class="post-author"><a href="#">Cras condimentum</a>, homeowner</div>
-											<p>Vivamus euismod nulla vel nunc. Fusce tincidunt, justo congue egestas
-												molestie, tortor tortor blandit erat, et scelerisque metus metus at
-												ipsum. Nunc tristique pede. Ut condimentum mattis est. Duis sit amet
-												augue. Duis sollicitudin, dui ac commodo. Aenean quam. Nulla neque
-												purus, ullamcorper nec, eleifend at, fermentum ut, turpis. Mauris et
-												ligula quis erat dignissim imperdiet. Integer ligula magna, dictum et,
-												pulvinar non. Vivamus euismod nulla vel nunc. Fusce tincidunt, justo
-												congue egestas molestie, tortor tortor blandit erat, et scelerisque.
-												<br>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="divider-lg"></div>
-						<div class="text-center"><a href="#" class="btn-default btn-lg">More Reviews</a></div>
-					</div>
-					<div class="divider-lg"></div>
-				</div>
-			</section>
-			<!-- Social navbar -->
-			<section class="content nopad-xs">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-6 col-md-6  col-lg-6 newsletter collapsed-block">
-							<div class="row">
-								<div class="col-lg-5  col-md-12 col-sm-12 ">
-									<h4>NEWSLETTER SIGNUP <a class="expander visible-xs" href="#TabBlock-1">+</a></h4>
-								</div>
-								<div class="col-sm-12 col-md-12 col-lg-6 tabBlock" id="TabBlock-1">
-									<p>Enter your email and we'll send you a coupon with 10% off your next order.</p>
-									<form class="form-inline" role="form">
-										<div class="form-group input-control">
-											<button type="submit" class="button"><span
-													class="icon-envelop"></span></button>
-											<input type="text" class="form-control" value="Your E-mail..."
-												onblur="if (this.value == '') {this.value = 'Your E-mail...';}"
-												onfocus="if(this.value == 'Your E-mail...') {this.value = '';}">
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-md-6 col-lg-6 collapsed-block">
-							<h4>FIND US ON<a class="expander visible-xs" href="#TabBlock-2">+</a></h4>
-							<div class="tabBlock" id="TabBlock-2">
-								<ul class="find-us">
-									<li class="divider"><a href="#" class="animate-scale"><span
-												class="icon icon-facebook-3"></span></a></li>
-									<li class="divider"><a href="#" class="animate-scale"><span
-												class="icon icon-twitter-3"></span></a></li>
-									<li class="divider"><a href="#" class="animate-scale"><span
-												class="icon icon-linkedin-2"></span></a></li>
-									<li class="divider"><a href="#" class="animate-scale"><span
-												class="icon icon-youtube-3"></span></a></li>
-									<li class="divider"><a href="#" class="animate-scale"><span
-												class="icon icon-pinterest-2"></span></a></li>
-									<li class="divider"><a href="#" class="animate-scale"><span
-												class="icon icon-googleplus-2"></span></a></li>
-								</ul>
-							</div>
-						</div>
+					<div class="galleryrow" id="galleryrowid">
+					
 					</div>
 				</div>
-			</section>
-			<!-- //end Social navbar -->
-
-			<!-- Footer -->
-			<footer>
-				<section class="footer-navbar">
-					<div class="container content nopad-xs">
-						<div class="row">
-							<div class="col-sm-6 col-md-4 col-lg-4 hidden-xs animate fadeUp">
-								<div class="copyright-text"> © 2021 MB Electricals. All Rights Reserved. </div>
-								<div class="footer-logo"><img src="images/electrical/logo.png" alt=""
-										class="img-responsive" /><a href="#"><span class="color">Electrical</span>
-										Experts</a></div>
-							</div>
-							<div class="col-sm-6 col-md-8 col-lg-8">
-								<div class="row">
-									<div class="col-sm-6 col-md-4 col-lg-4  collapsed-block animate fadeUp">
-										<h5>Information<a class="expander visible-xs" href="#TabBlock-3">+</a></h5>
-										<div class="tabBlock" id="TabBlock-3">
-											<ul class="menu">
-												<li><a href="electrical-team.html">About Us</a></li>
-												<li><a href="#">Privacy Notice</a></li>
-												<li><a href="#">Conditions of Use</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="clearfix visible-sm"></div>
-									<div class="col-sm-6 col-md-4 col-lg-4  collapsed-block animate fadeUp">
-										<h5>Customer service<a class="expander visible-xs" href="#TabBlock-4">+</a></h5>
-										<div class="tabBlock" id="TabBlock-4">
-											<ul class="menu">
-												<li><a href="#">Online support</a></li>
-												<li><a href="#">Help & FAQs</a></li>
-												<li><a href="#">Call Center</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="col-sm-6 col-md-4 col-lg-4 collapsed-block animate fadeUp">
-										<h5>CUSTOM HTML BLOCK<a class="expander visible-xs" href="#TabBlock-6">+</a>
-										</h5>
-										<div class="tabBlock" id="TabBlock-6">
-											<ul class="menu">
-												<li><span class="icon icon-house"></span> 7563 St. Vincent Place,
-													Glasgow</li>
-												<li><span class="icon icon-phone-4"></span> 321321321, 321321321</li>
-												<li><span class="icon icon-envelop"></span> <a
-														href="mailto:info@mydomain.com">info@mydomain.com</a></li>
-												<li><span class="icon icon-skype-2"></span> <a href="#">shop.test</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</footer>
-			<div id="outer-overlay"></div>
-			<!-- //end Footer -->
+				<div class="divider-lg"></div>
+				<div class="text-center"><button id="loadmore" class="btn-default btn-lg">More Images</button></div>
+				<div class="divider-lg"></div>
 		</div>
+		</section>
+		<!-- Social navbar -->
+		<section class="content nopad-xs">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-md-6  col-lg-6 newsletter collapsed-block">
+						<div class="row">
+							<div class="col-lg-5  col-md-12 col-sm-12 ">
+								<h4>NEWSLETTER SIGNUP <a class="expander visible-xs" href="#TabBlock-1">+</a></h4>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-6 tabBlock" id="TabBlock-1">
+								<p>Enter your email and we'll send you a coupon with 10% off your next order.</p>
+								<form class="form-inline" role="form">
+									<div class="form-group input-control">
+										<button type="submit" class="button"><span class="icon-envelop"></span></button>
+										<input type="text" class="form-control" value="Your E-mail..."
+											onblur="if (this.value == '') {this.value = 'Your E-mail...';}"
+											onfocus="if(this.value == 'Your E-mail...') {this.value = '';}">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-6 col-lg-6 collapsed-block">
+						<h4>FIND US ON<a class="expander visible-xs" href="#TabBlock-2">+</a></h4>
+						<div class="tabBlock" id="TabBlock-2">
+							<ul class="find-us">
+								<li class="divider"><a href="#" class="animate-scale"><span
+											class="icon icon-facebook-3"></span></a></li>
+								<li class="divider"><a href="#" class="animate-scale"><span
+											class="icon icon-twitter-3"></span></a></li>
+								<li class="divider"><a href="#" class="animate-scale"><span
+											class="icon icon-linkedin-2"></span></a></li>
+								<li class="divider"><a href="#" class="animate-scale"><span
+											class="icon icon-youtube-3"></span></a></li>
+								<li class="divider"><a href="#" class="animate-scale"><span
+											class="icon icon-pinterest-2"></span></a></li>
+								<li class="divider"><a href="#" class="animate-scale"><span
+											class="icon icon-googleplus-2"></span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- //end Social navbar -->
+
+		<!-- Footer -->
+		<footer>
+			<section class="footer-navbar">
+				<div class="container content nopad-xs">
+					<div class="row">
+						<div class="col-sm-6 col-md-4 col-lg-4 hidden-xs animate fadeUp">
+							<div class="copyright-text"> © 2021 MB Electricals. All Rights Reserved. </div>
+							<div class="footer-logo"><img src="/static/app/images/electrical/logo.png" alt=""
+									class="img-responsive" /><a href="#"><span class="color">Electrical</span>
+									Experts</a></div>
+						</div>
+						<div class="col-sm-6 col-md-8 col-lg-8">
+							<div class="row">
+								<div class="col-sm-6 col-md-4 col-lg-4  collapsed-block animate fadeUp">
+									<h5>Information<a class="expander visible-xs" href="#TabBlock-3">+</a></h5>
+									<div class="tabBlock" id="TabBlock-3">
+										<ul class="menu">
+											<li><a href="electrical-team.html">About Us</a></li>
+											<li><a href="#">Privacy Notice</a></li>
+											<li><a href="#">Conditions of Use</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="clearfix visible-sm"></div>
+								<div class="col-sm-6 col-md-4 col-lg-4  collapsed-block animate fadeUp">
+									<h5>Customer service<a class="expander visible-xs" href="#TabBlock-4">+</a></h5>
+									<div class="tabBlock" id="TabBlock-4">
+										<ul class="menu">
+											<li><a href="#">Online support</a></li>
+											<li><a href="#">Help & FAQs</a></li>
+											<li><a href="#">Call Center</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-4 col-lg-4 collapsed-block animate fadeUp">
+									<h5>CUSTOM HTML BLOCK<a class="expander visible-xs" href="#TabBlock-6">+</a>
+									</h5>
+									<div class="tabBlock" id="TabBlock-6">
+										<ul class="menu">
+											<li><span class="icon icon-house"></span> 7563 St. Vincent Place,
+												Glasgow</li>
+											<li><span class="icon icon-phone-4"></span> 321321321, 321321321</li>
+											<li><span class="icon icon-envelop"></span> <a
+													href="mailto:info@mydomain.com">info@mydomain.com</a></li>
+											<li><span class="icon icon-skype-2"></span> <a href="#">shop.test</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</footer>
+		<div id="outer-overlay"></div>
+		<!-- //end Footer -->
+	</div>
 	</div>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -546,6 +385,130 @@
 	<script src="{% static 'app/js/jquery.lettering-0.6.min.js' %}"></script>
 	<script src="{% static 'app/js/jquery.jscrollpane.min.js' %}"></script>
 	<script src="{% static 'app/js/electrical.js' %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+		integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+	<script>
+		$('.gallery').magnificPopup({
+
+			type: 'image',
+			delegate: 'a',
+			removalDelay: 300,
+			mainClass: 'mfp-with-fade',
+
+			gallery: {
+				enabled: true
+			}
+
+		});
+
+		function appendHtml(el, str) {
+			var div = document.createElement('div');
+			div.innerHTML = str;
+			while (div.children.length > 0) {
+				el.appendChild(div.children[0]);
+			}
+		}
+
+		let gallerycolumn=[],galleryrow;
+		galleryrow = document.getElementById('galleryrowid');
+		for (let index = 0; index < 4; index++) {		
+		gallerycolumn[index] = document.createElement('div');
+		gallerycolumn[index].classList.add('gallerycolumn');
+		gallerycolumn[index].classList.add('gallery');
+		galleryrow.appendChild(gallerycolumn[index])
+		}
+		let loadmore = document.getElementById('loadmore'); // selecting the form
+		loadmore.addEventListener('click', function (event) { // 1
+			event.preventDefault()
+			console.log("loadmore");
+			var gallerycontainer = document.querySelector("#gallerycontainer");
+
+			axios.get('/getimages') // 4
+			.then((response) => {
+				console.log(response.data);
+				console.log(response.data.length);
+				
+				
+				for (let index = 0; index < response.data.length; index++) {
+						console.log("index",index);
+						if (index%4==0) {
+							console.log("start1");
+							let anchortag = document.createElement('a');
+							anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
+							gallerycolumn[0].appendChild(anchortag)
+							console.log(index);
+							let imgtag = document.createElement('img');
+							imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
+							imgtag.setAttribute('style', 'width: 100%;');
+							anchortag.appendChild(imgtag)
+							console.log("end1");
+
+						}
+						else if(index%4==1) {
+							console.log("start2");
+							let anchortag = document.createElement('a');
+							anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
+							gallerycolumn[1].appendChild(anchortag)
+							console.log(index);
+							let imgtag = document.createElement('img');
+							imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
+							imgtag.setAttribute('style', 'width: 100%;');
+							anchortag.appendChild(imgtag)
+							console.log("end2");
+
+						}
+						else if(index%4==2) {
+							console.log("start3");
+							let anchortag = document.createElement('a');
+							anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
+							gallerycolumn[2].appendChild(anchortag)
+							console.log(index);
+							let imgtag = document.createElement('img');
+							imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
+							imgtag.setAttribute('style', 'width: 100%;');
+							anchortag.appendChild(imgtag)
+						}
+						else if(index%4==3) {
+							let anchortag = document.createElement('a');
+							anchortag.setAttribute('href', `/media/${response.data[index].Image}`);
+							gallerycolumn[3].appendChild(anchortag)
+							console.log(index);
+							let imgtag = document.createElement('img');
+							imgtag.setAttribute('src', `/media/${response.data[index].Image}`);
+							imgtag.setAttribute('style', 'width: 100%;');
+							anchortag.appendChild(imgtag)
+						}
+
+					}
+					console.log("gallery",galleryrow);
+					gallerycontainer.appendChild(galleryrow)
+					$('.gallery').magnificPopup({
+
+						type: 'image',
+						delegate: 'a',
+						removalDelay: 300,
+						mainClass: 'mfp-with-fade',
+
+						gallery: {
+							enabled: true
+						}
+
+					});
+
+
+
+				}) // 5
+				.catch(function () {
+
+				}) // 6
+		})
+		document.getElementById("loadmore").click();
+
+	</script>
+
 </body>
 
 </html>
