@@ -1940,7 +1940,7 @@ table .col5 { width:15%;}
 
 @media (max-width: 479px) {
 .responsive .navbar-logo {
-	width: 400px;
+	width: 355px;
 	margin: 0 auto;
 	text-align: center !important;
 	float: none !important;
