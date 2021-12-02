@@ -23,12 +23,12 @@ import pytz
 def index(request):
     if request.method=="POST":
         print(datetime.date.today())
-        TodaysAppointments=Appointment.objects.filter(Date=datetime.date.today())
-        print("TA",TodaysAppointments)
-        for appoint in TodaysAppointments:
+        DateAppointments=Appointment.objects.filter(Date=request.POST.get('Date'))
+        print("TA",DateAppointments)
+        for appoint in DateAppointments:
             if(appoint.Phone==request.POST.get('Phone')):
                 print("true")
-                return JsonResponse({"status": 'Appointment already Scheduled for Today',"status_code":1}) 
+                return JsonResponse({"status": 'Appointment already Scheduled at '+request.POST.get('Date'),"status_code":1}) 
         print(request.POST.get('First_Name'))
         Appoint=Appointment()
         Appoint.First_Name=request.POST.get('First_Name')
@@ -40,7 +40,7 @@ def index(request):
         Appoint.Email=request.POST.get('Email')
         Appoint.save()
         mail("memonayaj@satkar.online",Appoint.Email,"Appointment Scheduled",Appoint).start()
-        return JsonResponse({"status": 'Your appointment is Scheduled for Today',"status_code":0})
+        return JsonResponse({"status": 'Your appointment is Scheduled at '+request.POST.get('Date'),"status_code":0})
 
     return render(request,'index.html')
 
