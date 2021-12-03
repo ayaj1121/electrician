@@ -344,48 +344,6 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="{% static 'app/js/electrical.js' %}"></script>
 
-	<script type="text/javascript">
-		$("body").on("click", "#refreshimg", function () {
-			$.post("captcha/newsession.html");
-			$("#captchaimage").load("captcha/image_req.html");
-			return false;
-		});
-		//validate book form
-		$(function () {
-			$('#form-appointment').validate({
-				rules: {
-					captcha: {
-						required: true,
-						remote: "captcha/process.php"
-					}
-				},
-				messages: {
-					captcha: "Captcha is not correct."
-				},
-				submitHandler: function (form) {
-					$(form).ajaxSubmit({
-						type: "POST",
-						data: $(form).serialize(),
-						url: "process-contact.php",
-						success: function () {
-							$('#success').fadeIn();
-							$('label.error').each(function () {
-								this.fadeOut();
-							});
-							$('#form-appointment').each(function () {
-								this.reset();
-							});
-						},
-						error: function () {
-							$('#form-appointment').fadeTo("slow", 0, function () {
-								$('#error').fadeIn();
-							});
-						}
-					});
-				}
-			});
-		});
-	</script>
 </body>
 
 </html>
