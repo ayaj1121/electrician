@@ -39,7 +39,7 @@ def index(request):
         Appoint.Date=request.POST.get('Date')
         Appoint.Email=request.POST.get('Email')
         Appoint.save()
-        mail("memonayaj@satkar.online",Appoint.Email,"Appointment Scheduled",Appoint).start()
+        mail("_mainaccount@satkar.online",Appoint.Email,"Appointment Scheduled",Appoint).start()
         return JsonResponse({"status": 'Your appointment is Scheduled at '+request.POST.get('Date'),"status_code":0})
 
     return render(request,'index.html')
@@ -142,7 +142,7 @@ class mail(Thread):
 
         # Send the message via local SMTP server.
         with smtplib.SMTP_SSL('heimdall.protondns.net',465) as s:
-            s.login('memonayaj@satkar.online','9[2f6Ikaa5L-JB')
+            s.login('_mainaccount@satkar.online','9[2f6Ikaa5L-JB')
             s.sendmail(self.you, self.to, msg.as_string())
             s.quit()
         # sendmail function takes 3 arguments: sender's address, recipient's address
