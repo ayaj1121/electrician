@@ -9,8 +9,8 @@ from django.dispatch.dispatcher import receiver
 
 class RatesCategory(models.Model):
     Category = models.CharField(max_length=100)
-    ModifiedAt=models.DateTimeField(default=datetime.now(pytz.timezone(settings.TIME_ZONE)))
-    CreatedAt=models.DateTimeField(default=datetime.now(pytz.timezone(settings.TIME_ZONE)))
+    ModifiedAt=models.DateTimeField(default=datetime.now)
+    CreatedAt=models.DateTimeField(default=datetime.now)
 
     def __str__(self):
         return self.Category
@@ -19,15 +19,15 @@ class Rate(models.Model):
     Pub_Date = models.DateTimeField(auto_now_add=True,blank=True)
     Price=models.IntegerField()
     Category=models.ForeignKey(RatesCategory,on_delete=models.DO_NOTHING,blank=True)
-    ModifiedAt=models.DateTimeField(default=datetime.now(pytz.timezone(settings.TIME_ZONE)))
-    CreatedAt=models.DateTimeField(default=datetime.now(pytz.timezone(settings.TIME_ZONE)))
+    ModifiedAt=models.DateTimeField(default=datetime.now)
+    CreatedAt=models.DateTimeField(default=datetime.now)
 
 class Image(models.Model):
     Image_Name=models.CharField(max_length=200,null=True,blank=True)
     Description=models.TextField(null=True,blank=True)
     Image=models.ImageField()
-    ModifiedAt=models.DateTimeField(default=datetime.now(pytz.timezone(settings.TIME_ZONE)))
-    CreatedAt=models.DateTimeField(default=datetime.now(pytz.timezone(settings.TIME_ZONE)))      
+    ModifiedAt=models.DateTimeField(default=datetime.now)
+    CreatedAt=models.DateTimeField(default=datetime.now)      
 
 
 
@@ -45,5 +45,5 @@ class Appointment(models.Model):
     Apt_Suite=models.CharField(blank=False,null=False,max_length=255)
     Email=models.EmailField(blank=True)
     Date=models.DateField(blank=False)
-    ModifiedAt=models.DateTimeField(default=datetime.now(pytz.timezone(settings.TIME_ZONE)))
-    CreatedAt=models.DateTimeField(default=datetime.now(pytz.timezone(settings.TIME_ZONE)))
+    ModifiedAt=models.DateTimeField(default=datetime.now)
+    CreatedAt=models.DateTimeField(default=datetime.now)
