@@ -128,8 +128,18 @@ class mail(Thread):
         ctx = {
                 'user': self.user
             }
-        html = get_template('mail_template.html').render(ctx)
-        
+        # html = get_template('mail_template.html').render(ctx)
+        html="""
+<html>
+  <head></head>
+  <body>
+    <p>Hi!<br>
+       How are you?<br>
+       Appointment Scheduled at"""+self.user.Date+"""
+    </p>
+  </body>
+</html>
+"""
         # Record the MIME types of both parts - text/plain and text/html.
         # part1 = MIMEText(text, 'plain')
         part2 = MIMEText(html, 'html')
