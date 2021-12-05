@@ -853,7 +853,7 @@ class adminmail(Thread):
 				</head>
                 <body>
                     <p>Hi! Akhil,<br>
-                    Appointment Scheduled for """+self.user.First_Name+" "+self.user.Last_Name+" on date "+self.user.Date+" on location "+self.user.Address+"""
+                    Appointment Scheduled for """+self.user.First_Name+" "+self.user.Last_Name+"<br>Date: "+self.user.Date+"<br>Apt/Suite: "+self.user.Apt_Suite+"<br>Address: "+self.user.Address+"""
                     </p>
 						<a href="tel:"""+self.user.Phone+""""
 																	style="box-sizing: border-box;display: inline-block;font-family:'Raleway',sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #2a458a; border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
