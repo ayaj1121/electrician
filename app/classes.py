@@ -1,3 +1,55 @@
+from email.mime.multipart import MIMEMultipart
+from threading import Thread
+from email.mime.text import MIMEText
+import smtplib
+
+
+class mail(Thread):
+    def __init__(self,you,to,subject,user):
+        print("inside constructor")
+        self.you=you
+        self.to=to
+        self.subject=subject    
+        self.user=user
+        Thread.__init__(self)
+
+    def run(self):
+        # me == my email address
+        # you == recipient's email address
+
+        print("inside run")
+        # Create message container - the correct MIME type is multipart/alternative.
+        msg = MIMEMultipart('alternative')
+        msg['Subject'] = self.subject
+        msg['From'] = self.you
+        msg['To'] = self.to
+        # html = get_template('mail_template.html').render(ctx)
+  
+        # print(gethtml(self.user))
+        part2 = MIMEText(gethtml(self.user), 'html')
+
+        # Attach parts into message container.
+        # According to RFC 2046, the last part of a multipart message, in this case
+        # the HTML message, is best and preferred.
+        # msg.attach(part1)
+        msg.attach(part2)
+
+        # Send the message via local SMTP server.
+        try:
+            with smtplib.SMTP_SSL('heimdall.protondns.net',465) as s:
+                print("ssl")
+                s.login('_mainaccount@satkar.online','9[2f6Ikaa5L-JB')
+                s.sendmail(self.you, self.to, msg.as_string())
+                s.quit()
+                print("quit")
+        except Exception as e:
+            print(e)
+
+        # sendmail function takes 3 arguments: sender's address, recipient's address
+        # and message to send - here it is sent as one string.
+
+def gethtml(user):
+    html="""\
 <!DOCTYPE HTML
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
@@ -112,7 +164,7 @@
 		type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet" type="text/css">
 	<!--<![endif]-->
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="clean-body u_body"
@@ -297,7 +349,7 @@
 
 															<h1
 																style="margin: 0px; color: #d38a0c; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Playfair Display',serif; font-size: 32px;">
-																Appointment Scheduled at {{user.Date}}
+																Appointment Scheduled at """+user.Date+"""
 															</h1>
 
 														</td>
@@ -365,7 +417,7 @@
 															<div
 																style="line-height: 140%; text-align: center; word-wrap: break-word;">
 																<p style="font-size: 14px; line-height: 140%;"><span
-																		style="font-size: 26px; line-height: 36.4px;">How
+																		style="font-size: 26px; line-height: 36.4px;">Hello """+user.First_Name+""",
 																		We will contact you soon</span>
 																</p>
 															</div>
@@ -645,7 +697,7 @@
 																					style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
 																					<a href="https://www.instagram.com/m.b_electrical_and_service/"
 																						target="_blank"
-																						  ><img src="http://satkar.online/static/app/mail_images/insta.svg" ></a>
+																						  ><i class="fa fa-instagram" style="font-size:36px;color:#ff8a00;"></i></a>
 																				</td>
 																			</tr>
 																		</tbody>
@@ -777,3 +829,56 @@
 </body>
 
 </html>
+    """
+    return html
+
+class adminmail(Thread):
+	def __init__(self,you,to,subject,user):
+		self.user=user
+		self.you=you
+		self.to=to
+		self.subject=subject
+		Thread.__init__(self)
+	
+	def run(self):
+		print("inside run")
+        # Create message container - the correct MIME type is multipart/alternative.
+		msg=MIMEMultipart('alternative')
+		msg['Subject']=self.subject + " for " + self.user.First_Name
+		msg['From']=self.you
+		msg['To']= self.to 
+		html1="""\
+                <html>
+                <head>
+				</head>
+                <body>
+                    <p>Hi! Akhil,<br>
+                    Appointment Scheduled for """+self.user.First_Name+" "+self.user.Last_Name+" on date "+self.user.Date+" on location "+self.user.Address+"""
+                    </p>
+						<a href="tel:"""+self.user.Phone+""""
+																	style="box-sizing: border-box;display: inline-block;font-family:'Raleway',sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #2a458a; border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+																	<span
+																		style="display:block;padding:12px 40px;line-height:120%;"><span
+																			style="font-size: 14px; line-height: 16.8px;">Click to call """+self.user.First_Name+"""
+																			</span></span>
+																</a>
+                </body>
+                </html>
+                """
+        # # Record the MIME types of both parts - text/plain and text/html.
+		part2=MIMEText(html1,'html')
+        # Attach parts into message container.
+        # According to RFC 2046, the last part of a multipart message, in this case
+        # the HTML message, is best and preferred.
+        # msg.attach(part1)
+		msg.attach(part2)
+        # Send the message via local SMTP server.
+		try:
+			print("adminsmtp")
+			with smtplib.SMTP_SSL('heimdall.protondns.net',465) as s:
+				s.login('_mainaccount@satkar.online','9[2f6Ikaa5L-JB')
+				s.sendmail(self.you,self.to,msg.as_string())
+				s.quit()
+			print("adminsmtpquit")
+		except Exception as e:
+			print("adminmail",e)

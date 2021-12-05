@@ -666,7 +666,7 @@ header {
 .navbar-main-menu, .navbar-main-menu .item {
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
-box- sizing:content-box
+	box-sizing:content-box;
 }
 .navbar-main-menu-outer {
 	margin-top: 12px;
@@ -1940,7 +1940,7 @@ table .col5 { width:15%;}
 
 @media (max-width: 479px) {
 .responsive .navbar-logo {
-	width: 355px;
+	width: 400px;
 	margin: 0 auto;
 	text-align: center !important;
 	float: none !important;

@@ -1,24 +1,10 @@
 from django.http.response import JsonResponse
-from django.utils import timezone
 import datetime
 from django.shortcuts import render
-import smtplib
-from django.core.mail import send_mail
-from django.utils.html import strip_tags
-from django.template.loader import render_to_string
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from threading import Thread
-
-from django.template.loader import get_template
-from django.conf import settings
-# Create your views here.
-from django.http import HttpResponse
-from django.core import serializers
+from app.classes import adminmail, mail
 
 from app.models import Appointment, Image, Rate
-import json
-import pytz
+
 
 def index(request):
     if request.method=="POST":
@@ -40,6 +26,7 @@ def index(request):
         Appoint.Email=request.POST.get('Email')
         Appoint.save()
         mail("_mainaccount@satkar.online",Appoint.Email,"Appointment Scheduled",Appoint).start()
+        adminmail("_mainaccount@satkar.online","memonayaj9864@gmail.com","Appointment Scheduled",Appoint).start()
         return JsonResponse({"status": 'Your appointment is Scheduled at '+request.POST.get('Date'),"status_code":0})
 
     return render(request,'index.html')
@@ -106,54 +93,3 @@ def getimages(request):
     images=list(Image.objects.all()[offset:limit].values())
     return JsonResponse(images,safe=False)
 
-class mail(Thread):
-    def __init__(self,you,to,subject,user):
-        print("inside constructor")
-        self.you=you
-        self.to=to
-        self.subject=subject    
-        self.user=user
-        Thread.__init__(self)
-
-    def run(self):
-        # me == my email address
-        # you == recipient's email address
-
-        print("inside run")
-        # Create message container - the correct MIME type is multipart/alternative.
-        msg = MIMEMultipart('alternative')
-        msg['Subject'] = self.subject
-        msg['From'] = self.you
-        msg['To'] = self.to
-        ctx = {
-                'user': self.user
-            }
-        # html = get_template('mail_template.html').render(ctx)
-        html="""
-<html>
-  <head></head>
-  <body>
-    <p>Hi!<br>
-       How are you?<br>
-       Appointment Scheduled at"""+self.user.Date+"""
-    </p>
-  </body>
-</html>
-"""
-        # Record the MIME types of both parts - text/plain and text/html.
-        # part1 = MIMEText(text, 'plain')
-        part2 = MIMEText(html, 'html')
-
-        # Attach parts into message container.
-        # According to RFC 2046, the last part of a multipart message, in this case
-        # the HTML message, is best and preferred.
-        # msg.attach(part1)
-        msg.attach(part2)
-
-        # Send the message via local SMTP server.
-        with smtplib.SMTP_SSL('heimdall.protondns.net',465) as s:
-            s.login('_mainaccount@satkar.online','9[2f6Ikaa5L-JB')
-            s.sendmail(self.you, self.to, msg.as_string())
-            s.quit()
-        # sendmail function takes 3 arguments: sender's address, recipient's address
-        # and message to send - here it is sent as one string.
