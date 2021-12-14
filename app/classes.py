@@ -270,7 +270,7 @@ def gethtml(user):
 																		align="center">
 
 																		<img align="center" border="0"
-																			src="http://satkar.online/static/app/images/electrical/logo.gif"
+																			src="http://mbelectricals.in/static/app/images/electrical/logo.gif"
 																			alt="Logo" title="Logo"
 																			style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 23%;max-width: 121.9px;"
 																			width="121.9" />
@@ -371,7 +371,7 @@ def gethtml(user):
 																		align="center">
 
 																		<img align="center" border="0"
-																			src="http://satkar.online/static/app/mail_images/image-6.png"
+																			src="http://mbelectricals.in/static/app/mail_images/image-6.png"
 																			alt="Money and Growth"
 																			title="Money and Growth"
 																			style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 550px;"
@@ -487,7 +487,7 @@ def gethtml(user):
 																		align="center">
 
 																		<img align="center" border="0"
-																			src="http://satkar.online/static/app/mail_images/image-5.png"
+																			src="http://mbelectricals.in/static/app/mail_images/image-5.png"
 																			alt="Satisfaction Meter"
 																			title="Satisfaction Meter"
 																			style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 51%;max-width: 270.3px;"
