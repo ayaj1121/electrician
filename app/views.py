@@ -25,8 +25,8 @@ def index(request):
         Appoint.Date=request.POST.get('Date')
         Appoint.Email=request.POST.get('Email')
         Appoint.save()
-        mail("_mainaccount@satkar.online",Appoint.Email,"Appointment Scheduled",Appoint).start()
-        adminmail("_mainaccount@satkar.online","memonayaj9864@gmail.com","Appointment Scheduled",Appoint).start()
+        mail("mbelectricals@mbelectricals.in",Appoint.Email,"Appointment Scheduled",Appoint).start()
+        adminmail("mbelectricals@mbelectricals.in","akhilmalik@mbelectricals.in","Appointment Scheduled",Appoint).start()
         return JsonResponse({"status": 'Your appointment is Scheduled at '+request.POST.get('Date'),"status_code":0})
 
     return render(request,'index.html')

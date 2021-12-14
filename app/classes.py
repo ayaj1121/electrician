@@ -38,7 +38,7 @@ class mail(Thread):
         try:
             with smtplib.SMTP_SSL('heimdall.protondns.net',465) as s:
                 print("ssl")
-                s.login('_mainaccount@satkar.online','9[2f6Ikaa5L-JB')
+                s.login('mbelectricals@mbelectricals.in','Akhilmalik9601657865')
                 s.sendmail(self.you, self.to, msg.as_string())
                 s.quit()
                 print("quit")
@@ -876,7 +876,7 @@ class adminmail(Thread):
 		try:
 			print("adminsmtp")
 			with smtplib.SMTP_SSL('heimdall.protondns.net',465) as s:
-				s.login('_mainaccount@satkar.online','9[2f6Ikaa5L-JB')
+				s.login('mbelectricals@mbelectricals.in','Akhilmalik9601657865')
 				s.sendmail(self.you,self.to,msg.as_string())
 				s.quit()
 			print("adminsmtpquit")
